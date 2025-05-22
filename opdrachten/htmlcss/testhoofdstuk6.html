@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <p>
+            <label>Labeltekst:
+                <input name="naam" type="text" autofocus>
+            </label>
+        </p>
+        <label>Postcode:
+            <input name="postcode" type="text" pattern="[0-9]{4}\s?[A-Z]{2}"
+                title="Een postcode bestaat uit 4 cijfers en 2 hoofdletters.">
+        </label>
+        <br>
+        <label>Gekozen:
+            <input name="product" readonly value="Plintenladdertje">
+        </label>
+        <br>
+        <label>Aantal:
+            <input id="aantal" name="aantal" type="number" min="1">
+        </label>
+        <br>
+        <label>Straatnaam:
+            <small>(vereist)</small>
+            <input name="straatnaam" required>
+        </label>
+        <br>
+        <label>Aantal kaartjes:
+            <input name="kaartjes" type="number" value="1" min="5" max="300" step="5">
+        </label>
+        <br>
+        <label>Email:<small>meerdere adressen zijn mogelijk</small>
+            <input name="email" type="email" multiple pattern="^([a-zA-Z0-9._%+-]+\.[a-zA-Z]{2,4}\,?\s?)+$">
+        </label>
+        <br>
+        <label>Nummer:
+            <input name="nummer" type="number">
+        </label>
+        <br>
+        <label>Waarde:
+            <input name="range" type="range" min="-100" max="100" step="10">
+        </label>
+        <br>
+        <label>Kies een kleur:
+            <input name="kleur" type="color" value="#ff0000">
+        </label>
+        <fieldset class="checkbox">
+            <legend>Vergroot het comfort van uw ee-bike met:</legend>
+            <label>
+                <span>airconditioning</span>
+                <input type="checkbox" name="comfort" value="airco">
+            </label>
+            <label>
+                <span>cruisecontrol</span>
+                <input type="checkbox" name="comfort" value="cruisecontrol">
+            </label>
+            <label>
+                <span>Zadelverwarming</span>
+                <input type="checkbox" name="comfort" value="Zadelverwarming">
+            </label>
+        </fieldset>
+        <fieldset class="radio">
+            <legend>Aantal medewerkers</legend>
+            <label>
+                <span>1 (alleen ik)</span>
+                <input type="radio" name="medewerkers" value="1">
+            </label>
+            <label>
+                <span>2 - 10</span>
+                <input type="radio" name="medewerkers" value="2-10">
+            </label>
+            <label>
+                <span>11 - 50</span>
+                <input type="radio" name="medewerkers" value=11-50">
+            </label>
+        </fieldset>
+        <br>
+        <label for="gezond">De gezonde keus:</label>
+        <select id="gezond" name="gezond">
+            <optgroup label="groenten">
+                <option value="spinazie">spinazie</option>
+                <option value="witte kool">witte kool</option>
+                <option value="tuinbonen">tuinbonen</option>
+            </optgroup>
+            <optgroup label="fruit">
+                <option value="appel">appel</option>
+                <option value="peer">peer</option>
+                <option value="mandarijn">mandarijn</option>
+            </optgroup>
+        </select>
+        <br>
+        <label for="stijl">Kies één muziekstijl:</label>
+        <select id="stijl" name="stijl">
+            <option value="pop">pop</option>
+            <option value="rock">rock</option>
+            <option value="indie">indie</option>
+            <option value="dance">dance</option>
+            <option value="klassiek">klassiek</option>
+        </select>
+        <br>
+        <label for="genre-lijst">Welke muziekstijl wil je horen?</label>
+        <input list="genre" id="genre-lijst" name="stijl">
+        <datalist id="genre">
+            <option value="pop">
+            <option value="rock">
+            <option value="indie">
+            <option value="dance">
+            <option value="klassiek">
+        </datalist>
+        <br>
+        <button type="submit">Verzend</button>
+    </form>
+</body>
+
+</html>

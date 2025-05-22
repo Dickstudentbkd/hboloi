@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM vervolg met JS</title>
+</head>
+<body>
+    <form>
+        <fieldset name="verzendadres">
+            <legend>Verzendadres</legend>
+            <label>
+                <span>Factuuradres is gelijk aan verzendadres</span>
+                <input type="checkbox" onchange="form.factuuradres.disabled = checked">
+            </label>
+            <label><span>Naam</span>
+                <input type="text" name="verzend_naam">
+            </label>
+            <label><span>Straat</span>
+                <input type="text" name="verzend_straat">
+            </label>
+        </fieldset>
+        <fieldset name="factuuradres">
+            <legend>Factuurdadres</legend>
+            <label><span>Naam</span>
+                <input type="text" name="factuur_naam">
+            </label>
+            <label><span>Straat</span>
+                <input type="text" name="factuur_straat">
+            </label>
+        </fieldset>
+        <br>
+        <label>Document wordt gedownload
+            <progress max="100" value="25">25</progress>
+        </label> 
+        <br>
+        <meter value="9.0" min="1" low="5.5" high="8" max="10" optimum="10">
+
+        </meter>
+    </form>
+</body>
+</html>

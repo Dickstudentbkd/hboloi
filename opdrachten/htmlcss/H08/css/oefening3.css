@@ -1,0 +1,37 @@
+body {
+    background-color: #f0ffff;
+    font-family: "Trebuchet MS" ;
+    font-size: 14px;
+}
+a {
+    opacity: 1;
+    width: 100%;
+    height: auto;
+
+}
+a > img {
+    border: 0.1rem solid gray;
+    border-radius: 50%;
+}
+a:link {
+    color: red;
+}
+a:visited {
+    color: black;
+}
+h1 {
+    color: orange;
+    font-size: 20px;
+}
+h2 {
+    color: sandybrown;
+    font-size: 18px;
+}
+p {
+    font-size: 16px;
+    border-left: double blue 0.5rem;
+}
+p::first-letter {
+    font-size: 18px;
+    color: blue;
+}

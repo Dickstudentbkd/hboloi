@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+}
+/*div {
+    border: 1px solid #cccccc;
+    !*border-width: thin;*!
+}*/
+.bordspellen {
+    height: 670px;
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+.schaakbord {
+    top: 680px;
+    border: 1px solid red;
+    text-align: center;
+}
+.image-box1 {
+    border: 1px solid #cccccc;
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    top:140px;
+    /*left: 50%;*/
+    /*width: 100%;*/
+    left: 37%;
+}
+.image-box2 {
+    border: 1px solid #cccccc;
+    padding: 0px;
+    text-align: center;
+    position: fixed;
+    top:550px;
+    left: 0px;
+    width: 50%;
+}
+.overlay {
+    box-sizing: content-box;
+    background-color: rgba(255, 255, 2555, 0.7);
+    background-color: #cccccc;
+    padding: 30px;
+    border: 30px rgba(255, 255, 2555, 0.5) solid;
+    width: 30%;
+    position: fixed;
+    top: 570px;
+    left: 65px;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-box {
+    box-sizing: border-box;
+    position: fixed;
+    top:550px;
+    width: 50%;
+    right: 0px;
+    padding: 0px;
+}
+table, th, td {
+    border: 2px solid;
+    border-collapse: collapse;
+    border-color: white;
+    text-align: center;
+}
+table.spelletjes-tabel {
+    border-color: white;
+    width: 100%;
+}
+td {
+    /*border-color: lightyellow;*/
+    border-color: white;
+}
+th {
+    background-color: deepskyblue;
+}
+td:nth-child(1) {
+
+    background-color: rgba(255,198,174,0.2);
+    text-align: left;
+}
+td:nth-child(2), td:nth-child(4)
+{
+    background-color: #FFB937;
+}
+td:nth-child(5), td:nth-child(7) {
+    background-color: #FFA500;
+}
+/*Schaakbord*/
+.schaakbord {
+    border-collapse: collapse;
+    width: 320px;
+    height: 320px;
+    border: 2px solid red;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Segoe UI Symbol', 'Arial Unicode MS', sans-serif;
+}
+
+.schaakbord td {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+
+/* Wit en zwart patroon */
+.schaakbord tr:nth-child(even) td:nth-child(odd),
+.schaakbord tr:nth-child(odd) td:nth-child(even) {
+    background-color: darkgrey; /* donkergrijs */
+}
+
+.schaakbord tr:nth-child(even) td:nth-child(even),
+.schaakbord tr:nth-child(odd) td:nth-child(odd) {
+    background-color: white; /* wit */
+}

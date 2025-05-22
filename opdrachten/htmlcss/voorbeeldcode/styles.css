@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.div-1, .div-2 {
+    border: 2px solid gray;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.div-3, .div-4, .div-5, .div-6 {
+    border: 2px solid gray;
+    padding: 20px;
+    text-align: center;
+}
+
+.div-3 {
+    width: 60%;
+    margin: 0 auto 20px auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-4, .div-5 {
+    width: 48%;
+}
+
+.div-6 {
+    width: 50%;
+    margin: 20px auto 0 auto;
+}
+h2 {
+    text-align: center;
+}

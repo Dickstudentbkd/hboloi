@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accomodatie boeken</title>
+</head>
+
+<body>
+    <section>
+        <h1>Accomodatie boeken</h1>
+        <p>Op deze pagina kunt u een kamer in ons hotel boeken en nog een aantal foto's en een filmpje bekijken.</p>
+    </section>
+    <section>
+        <form name="reservering" id="reservering" action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
+            <h2>Adresgegevens</h2>
+            <p>
+                <label>Naam:
+                    <input type="text" name="naam" required>
+                </label>
+            </p>
+            <p>
+                <label>Adres:
+                    <input type="text" name="adres" required>
+                </label>
+            </p>
+            <p>
+                <label>Postcode
+                    <input type="text" name="postcode" minlength="6" maxlength="6" placeholder="1111AA" required
+                        pattern="[0-9]{4}[A-Z]{2}" title="Een postcode bestaat uit 4 cijfers en 2 hoofdletters.">
+                </label>
+            </p>
+            <p>
+                <label>Woonplaats:
+                    <input type="text" name="woonplaats" required>
+                </label>
+            </p>
+            <p>
+                <label>Telefoonnr:
+                    <input type="text" name="telefoonnr" required>
+                </label>
+            </p>
+            <p>
+                <label>E-mailadres:
+                    <input type="email" name="email" required title="Een emailadres moet een @ bevatten.">
+                </label>
+            </p>
+        </form>
+    </section>
+    <section>
+        <h2>Reservering</h2>
+        <p>
+            <label>Aantal personen:
+                <input type="number" name="aantalpersonen" form="reservering" value="1" min="1" max="10" required>
+            </label>
+        </p>
+        <p>
+            <label>Aankomstdatum:
+                <input type="date" name="aankomstdatum" form="reservering" required>
+            </label>
+        </p>
+        <p>
+            <label>Verblijfsduur:
+                <input type="range" name="Verblijfsduur" form="reservering" id="inputdays" min="2" max="20" step="2"
+                    value="6" oninput="days.value=inputdays.value">
+            </label>
+            <label>Aantal dagen:
+                <output id="days" name="days" for="days">6</output>
+            </label>
+        </p>
+        <p>
+            <label>Verzorging
+                <select id="verzorging" name="verzorging" form="reservering">
+                    <option value="logies" selected>Logies</option>
+                    <option value="logies_met_ontbijt">Logies met ontbijt</option>
+                    <option value="halfpension">Halfpension</option>
+                    <option value="volpension">Volpension</option>
+                </select>
+            </label>
+        </p>
+        <p>
+            Annuleringsverzekering:
+                <label>
+                    <input type="radio" name="annuleringsverzekering" form="reservering" value="ja">
+                    Ja
+                </label>
+                <label>
+                    <input type="radio" name="annuleringsverzekering" form="reservering" value="nee">
+                    Nee
+                </label>
+        </p>
+        <p>
+            <label>Opmerkingen:
+                <textarea name="opmerkingen" form="reservering" rows="4" cols="50"></textarea>
+            </label>
+        </p>
+        <p>
+            <input type="submit" name="reserveer" value="Reserveer" form="reservering">
+        </p>
+    </section>
+    <section>
+        <h2>Foto's</h2>
+        <figure>
+            <img src="img/01_lopend_buffet.png" alt="Bij elke maaltijd wordt er gebruik gemaakt van een lopend buffet">
+            <figcaption>Lopend buffet</figcaption>
+        </figure>
+        <figure>
+            <img src="img/02_voorbeeld_bed.png" alt="Hier wordt &#233;&#233;n van de bedden getoond uit ons hotel">
+            <figcaption>E&#233;n van de bedden</figcaption>
+        </figure>
+        <figure>
+            <img src="img/03_lokale_eetgelegenheid.png" alt="Er zijn veel lokale gelegenheden. Hierbij een voorbeeld.">
+            <figcaption>Een lokale eetgelegenheid</figcaption>
+        </figure>
+        <figure>
+            <img src="img/04_gang_hotel.png" alt="De gangen in ons hotel zijn ruim en strak ingericht.">
+            <figcaption>Een gang in het hotel</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h2>Filmpje</h2>
+        <p>Een kort inspiratiefilmpje van de mooie omgeving.</p>
+        <video poster="video/start_film.png" preload="metadata" controls width="640" height="360">
+            <source src="video/Omgeving_Spanje.mp4" type="video/mp4">
+        </video>
+    </section>
+</body>
+
+</html>

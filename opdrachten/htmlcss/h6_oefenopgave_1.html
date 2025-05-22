@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H6 Oefenopgave 1</title>
+</head>
+<body>
+    <h1>Een formulier voor het invullen van uw naam</h1>
+    <form action="" method="get">
+        <label>Voornaam:
+            <input type="text" name="voornaam" autofocus required>
+        </label>
+        <br>
+        <label>Tussenvoegsel:
+            <input type="text" name="tussenvoegsel">
+        </label>
+        <br>
+        <label>Achternaam:
+            <input type="text" name="achternaam" required>
+        </label>
+        <br>
+        <label>E-mail adres:
+            <input type="email" name="email" required>
+        </label>
+        <br>
+        <label>Wachtwoord:
+            <input type="password" name="password" required>
+        </label>
+        <br>
+        <fieldset class="radio">
+            <legend>Geslacht:</legend>
+            <label>
+                <span>M</span>
+                <input type="radio" id="M" name="geslacht" value="M">
+            </label>
+            <label>
+                <span>V</span>
+                <input type="radio" id="V" name="geslacht" value="V">
+            </label>
+        </fieldset>
+        <br>
+        <label>Maak een keuze uit de volgende modules:
+        <select id="vakgebied" name="vakgebied">
+            <optgroup label="Vakgebied Hobby:">
+                <option value="Filosofie">Filosofie</option>
+                <option value="Voetverzorging">Voetverzorging</option>
+                <option value="Belegging voor beginners">Belegging voor beginners</option>
+            </optgroup>
+            <optgroup label="Vakgebied Talen:">
+                <option value="Spaans voor beginners">Spaans voor beginners</option>
+                <option value="Engels voor gevorderden">Engels voor gevorderden</option>
+            </optgroup>
+        </select>
+        </label>
+        <button type="submit" value="Submit">Verzend</button>
+    </form>
+</body>
+</html>

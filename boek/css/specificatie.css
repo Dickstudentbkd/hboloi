@@ -1,0 +1,36 @@
+* {
+    background-color: azure;
+    font-family: "Trebuchet MS";
+    color: mediumpurple;
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 20px;
+}
+/*Oplossing 1*/
+#leuke-dingen li {
+    color: darkgreen;
+    font-weight: normal;
+}
+#leuke-dingen li.leukste {
+    color: orange;
+    font-weight: bold;
+}
+/*Oplossing 3*/
+:where(#leuke-dingen) li {
+    color: darkgreen;
+    font-weight: normal;
+}
+li.leukste {
+    color: orange;
+    font-weight: bold;
+}
+
+label::after {
+    content: 'Schakel mij in  😢';
+}
+
+label:has(input:checked)::after {
+    content: 'Dankjewel! 🥳';
+}

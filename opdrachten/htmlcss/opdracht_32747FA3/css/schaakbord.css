@@ -1,0 +1,28 @@
+.schaakbord {
+    border-collapse: collapse;
+    width: 320px;
+    height: 320px;
+    border: 2px solid red;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Segoe UI Symbol', 'Arial Unicode MS', sans-serif;
+    horiz-align: center;
+}
+
+.schaakbord td {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+
+/* Wit en zwart patroon */
+.schaakbord tr:nth-child(even) td:nth-child(odd),
+.schaakbord tr:nth-child(odd) td:nth-child(even) {
+    background-color: darkgrey; /* donkergrijs */
+}
+
+.schaakbord tr:nth-child(even) td:nth-child(even),
+.schaakbord tr:nth-child(odd) td:nth-child(odd) {
+    background-color: white; /* wit */
+}

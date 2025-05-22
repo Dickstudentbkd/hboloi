@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+* {
+    /*outline: 1px solid grey;*/
+    box-sizing: border-box; // beter is border-box, alleen margin wordt wél extre gerekend dan
+}
+/*Breedte = content + padding + border + margin */
+h1 {
+    background-color: beige;
+    padding: 10px;
+    /*margin: 20px;*/
+    width: 50%;
+    border: 5px solid black;
+    float: left; // doorbreekt de flow
+}
+p {
+    clear: both;
+}
+/*margin altijd transparant!*/
+/*Breedte = 200px + 2x10px + 2x20px + 2x5px = 270px */

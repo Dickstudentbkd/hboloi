@@ -1,0 +1,44 @@
+form {
+  max-width: 800px;
+}
+ul {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+}
+li {
+  display: contents;
+}
+li > label {
+  justify-self: end;
+}
+small {
+  display: block;
+}
+fieldset {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+fieldset.right {
+  grid-column: 2;
+  grid-template-columns: auto;
+}
+fieldset.side-by-side {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+fieldset.single-col-grid:first-of-type {
+  grid-column: 1;
+}
+fieldset.single-col-grid:last-of-type {
+  grid-column: 2;
+}
+li.buttons {
+  grid-column: 2;
+  display: flex;
+  justify-content: space-around;
+}
+progress {
+  display: block;
+}

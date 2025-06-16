@@ -1,0 +1,21 @@
+nav {
+  border: 1px solid black;
+  box-sizing: content-box;
+  columns: 3;
+  margin: 0;
+  padding: 0 1em;
+  max-width: 870px;
+}
+
+ul {
+  margin-top: 1em;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.break {
+  break-before: column;
+}

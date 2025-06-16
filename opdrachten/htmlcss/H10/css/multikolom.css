@@ -1,0 +1,11 @@
+article {
+    column-count: 2;
+    /*column-width: 175px;*/
+    column-gap: 2em;
+    column-rule-color: darkgreen;
+    column-rule-style: solid;
+    column-rule-width: 3px;
+}
+p {
+    /*columns: 175px 2;*/
+}

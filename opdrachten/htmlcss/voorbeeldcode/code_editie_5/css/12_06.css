@@ -1,0 +1,25 @@
+.clip-outer {
+	position: relative;
+}
+.clip-inner { /* extra div om de oorspronkelijke afbeelding te laten zien */
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.clip-inner > img {
+	opacity: .2;
+}
+.clip-outer > img {
+	clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.clip-url svg {
+	width: 0;
+	height: 0;
+}
+.clip-url > img {
+	clip-path: url('#clip-circle');
+}
+.clip-inset > img {
+	clip-path: inset(0 100px round 20px);
+}

@@ -1,0 +1,135 @@
+article {
+  width: 700px;
+  padding: .5em;
+  margin-top: 3em;
+  background-color: lightcoral;
+}
+
+.test {
+  width: 90%;
+  height: 100px;
+  outline: 1px dotted black;
+  background-color: hsl(0, 0%, 99%);
+  color: hsl(0, 0%, 5%)
+
+}
+
+.rgb {
+  margin-top: 3em;
+  width: 600px;
+  display: grid;
+  grid-auto-rows: 100px;
+  grid-row-gap: 1em;
+}
+
+.rgb .col1 {
+  display: flex;
+}
+
+.rgb .col2 {
+  display: flex;
+}
+
+.rgb > div > div {
+  flex: 1;
+  height: 100px;
+}
+
+.rgb .col1 div:nth-child(1) {
+  background-color: rgb(35, 70, 105);
+}
+
+.rgb .col1 div:nth-child(2) {
+  background-color: rgb(85, 120, 155);
+}
+
+.rgb .col1 div:nth-child(3) {
+  background-color: rgb(135, 170, 205);
+}
+
+.rgb .col2 div:nth-child(1) {
+  background-color: rgba(35, 70, 105, .5);
+}
+
+.rgb .col2 div:nth-child(2) {
+  background-color: rgba(85, 120, 155, .5);
+}
+
+.rgb .col2 div:nth-child(3) {
+  background-color: rgba(135, 170, 205, .5);
+}
+
+
+.hsl {
+  margin-top: 3em;
+  width: 600px;
+  display: grid;
+  grid-auto-rows: 100px;
+  grid-row-gap: 1em;
+}
+
+.hsl .col1 {
+  display: flex;
+}
+
+.hsl .col2 {
+  display: flex;
+}
+
+.hsl > div > div {
+  flex: 1;
+  height: 100px;
+}
+
+.hsl .col1 div:nth-child(1) {
+  background-color: hsl(120, 25%, 25%);
+}
+
+.hsl .col1 div:nth-child(2) {
+  background-color: hsl(120, 50%, 50%);
+}
+
+.hsl .col1 div:nth-child(3) {
+  background-color: hsl(120, 75%, 75%);
+}
+
+.hsl .col2 div:nth-child(1) {
+  background-color: hsla(120, 25%, 25%, .25);
+}
+
+.hsl .col2 div:nth-child(2) {
+  background-color: hsla(120, 50%, 50%, .5);
+}
+
+.hsl .col2 div:nth-child(3) {
+  background-color: hsla(120, 75%, 75%, .75);
+}
+
+.opa {
+  margin-top: 3em;
+  width: 600px;
+  display: flex;
+  background-color: hsl(20, 100%, 50%);
+}
+
+.opa div {
+  height: 100px;
+  margin: 1em;
+  flex: 1;
+}
+
+.opa div:nth-child(1) {
+  background-color: hsla(0, 0%, 100%, .2);
+}
+
+.opa div:nth-child(2) {
+  background-color: hsla(0, 0%, 100%, .4);
+}
+
+.opa div:nth-child(3) {
+  background-color: hsla(0, 0%, 100%, .6);
+}
+
+.opa div:nth-child(4) {
+  background-color: hsla(0, 0%, 100%, .8);
+}

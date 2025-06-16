@@ -1,0 +1,16 @@
+article {
+  column-count: 2;
+  padding: 1em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p + p {
+  margin-top: 1em;
+}
+figure {
+  column-span: all;
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>06_03</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/06_03.css">
+<body>
+
+<!--<form action="verwerk_formulier.cgi" method="post">-->
+<!--De regel hierboven is correct, maar werkt niet zonder webserver en een cgi-script.-->
+<!--De volgende regel laadt na drukken op verzenden het formulier opnieuw.-->
+<form action="" method="">
+  <ul>
+    <li>
+      <label for="text">input type="text"</label>
+      <input id="text" type="text" name="text" autofocus>
+    </li>
+    <li>
+      <label for="email">input type="email"</label>
+      <input id="email" type="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+    </li>
+    <li>
+      <label for="tel">input type="tel"
+      </label>
+      <input id="tel" type="tel" name="tel" pattern="0\d{9}" maxlength="10" placeholder="alleen cijfers">
+    </li>
+    <li>
+      <label for="url">input type="url"</label>
+      <input id="url" type="url" name="url" pattern="^(http|https|ftp):\/\/.+">
+    </li>
+    <li>
+      <label for="password">input type="password"</label>
+      <input id="password" type="password" name="password">
+    </li>
+    <li>
+      <label for="number">input type="number"
+      </label>
+      <input id="number" type="number" name="number" value="0" step="5">
+    </li>
+    <li>
+      <label for="range">input type="range"
+        <small>-100 tot 100, stapgroote 10</small>
+      </label>
+      <input id="range" type="range" name="range" value="0" min="-100" max="100" step="10">
+    </li>
+    <li>
+      <label for="color">input type="color"</label>
+      <input id="color" type="color" name="color" value="#66bb77">
+    </li>
+    <li>
+      <label for="date">input type="date"</label>
+      <input id="date" type="date" name="date">
+    </li>
+    <li>
+      <label for="time">input type="time"</label>
+      <input id="time" type="time" name="time">
+    </li>
+    <li>
+      <label for="datetime-local">input type="datetime-local"</label>
+      <input id="datetime-local" type="datetime-local" name="datetime-local">
+    </li>
+    <li>
+      <label for="week">input type="week"</label>
+      <input id="week" type="week" name="week">
+    </li>
+    <li>
+      <label for="month">input type="month"</label>
+      <input id="month" type="month" name="month">
+    </li>
+    <li>
+      <label for="checkbox">input type="checkbox"</label>
+      <fieldset id="checkbox" class="right">
+        <legend>Vergroot het comfort van uw e-bike met:</legend>
+        <label for="opt1">
+          <input id="opt1" type="checkbox" name="comfort" value="airco">airconditioning</label>
+        <label for="opt2">
+          <input id="opt2" type="checkbox" name="comfort" value="stuurverwarming">stuurverwarming</label>
+        <label for="opt3">
+          <input id="opt3" type="checkbox" name="comfort" value="zadelverwarming">zadelverwarming</label>
+      </fieldset>
+    </li>
+    <li>
+      <label for="checkbox">input type="radio"</label>
+      <fieldset class="right">
+        <legend>Aantal medewerkers</legend>
+        <label for="opt4"><input id="opt4" type="radio" name="mw" value="1">1 (alleen ik)</label>
+        <label for="opt5"><input id="opt5" type="radio" name="mw" value="2-10">2 - 10</label>
+        <label for="opt6"><input id="opt6" type="radio" name="mw" value="11-50">11 - 50</label>
+      </fieldset>
+    </li>
+
+    <li><label for="gezond">De gezonde keus</label>
+      <select id="gezond" name="gezond">
+        <optgroup label="groenten">
+          <option value="spinazie">spinazie</option>
+          <option value="witte kool">witte kool</option>
+          <option value="tuinbonen">tuinbonen</option>
+        </optgroup>
+        <optgroup label="fruit">
+          <option value="appel">appel</option>
+          <option value="peer">peer</option>
+          <option value="mandarijn">mandarijn</option>
+        </optgroup>
+      </select>
+    </li>
+    <li>
+      <label for="genre-lijst">Welke muziekstijl wil je horen?</label>
+      <input list="genre" id="genre-lijst" name="stijl">
+      <datalist id="genre">
+        <label for="lijst-fail">Kies een muziekstijl:</label> <!-- Terugvalmechanisme voor iOS/Safari -->
+        <select id="lijst-fail" name="stijl"> <!-- Terugvalmechanisme voor iOS/Safari -->
+          <option value="pop">
+          <option value="rock">
+          <option value="indie">
+          <option value="dance">
+        </select>
+      </datalist>
+    </li>
+    <li>
+      <label for="mening">Opmerkingen bij uw bestelling:</label>
+      <textarea id="mening" name="mening" rows="5"></textarea>
+    </li>
+    <li class="buttons">
+      <input type="reset" value="Herstellen">
+      <input type="submit" value="Versturen">
+    </li>
+
+    <li>
+      <fieldset class="side-by-side">
+        <legend>
+          <label for="ongelijk"><input type="checkbox" id="ongelijk" onchange="form.factuur.disabled = !checked"> Het
+            factuuradres wijkt af van het verzendadres</label>
+        </legend>
+        <fieldset class="single-col-grid">
+          <legend>Verzendadres</legend>
+          <label for="verzend_naam">Naam</label>
+          <input type="text" id="verzend_naam" name="verzend_naam">
+          <label for="verzend_straat">Straat</label>
+          <input type="text" id="verzend_straat" name="verzend_straat">
+          <label for="verzend_nummer">Huisnummer</label>
+          <input type="text" id="verzend_nummer" name="verzend_nummer">
+          <label for="verzend_postcode">Postcode</label>
+          <input type="text" id="verzend_postcode" name="verzend_postcode">
+          <label for="verzend_plaats">Plaats:</label>
+          <input type="text" id="verzend_plaats" name="verzend_plaats">
+        </fieldset>
+        <fieldset class="single-col-grid" name="factuur" disabled>
+          <legend>Factuuradres</legend>
+          <label for="factuur_naam">Naam</label>
+          <input type="text" id="factuur_naam" name="factuur_naam">
+          <label for="factuur_straat">Straat</label>
+          <input type="text" id="factuur_straat" name="factuur_straat">
+          <label for="factuur_nummer">Huisnummer</label>
+          <input type="text" id="factuur_nummer" name="factuur_nummer">
+          <label for="factuur_postcode">Postcode</label>
+          <input type="text" id="factuur_postcode" name="factuur_postcode">
+          <label for="factuur_plaats">Plaats:</label>
+          <input type="text" id="factuur_plaats" name="factuur_plaats">
+        </fieldset>
+      </fieldset>
+
+    </li>
+    <li>
+      <fieldset name="klantenkaart" disabled>
+        <legend><label>
+          <input type="checkbox" name="klant" onchange="form.klantenkaart.disabled = !checked">
+          Ik wil mijn klantenkaart gebruiken</label></legend>
+        <label for="klantnaam">Naam op de kaart:</label>
+        <input name="klantnaam" id="klantnaam">
+        <label for="klantnummer">Kaartnummer:</label>
+        <input id="klantnummer" name="klantnummer">
+      </fieldset>
+    </li>
+  </ul>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>05_img</title>
+</head>
+<body>
+
+<!--In het attribuut style zorgt max-width ervoor dat de afbeelding nooit breder kan worden dan het venster-->
+<img src="images/waterlelie_640.jpg" alt="De bloem van een waterlelie" style="max-width: 100%;"
+     srcset="images/waterlelie_640.jpg 640w,
+             images/waterlelie_1280.jpg 1280w,
+             images/waterlelie_1920.jpg 1920w,
+             images/waterlelie_hires.jpg"
+     sizes="(max-width: 640px) 100vw,
+            (max-width: 1280px) 50vw,
+            (max-width: 1920px) 33vw,
+            100vw"
+>
+
+</body>
+</html>
+

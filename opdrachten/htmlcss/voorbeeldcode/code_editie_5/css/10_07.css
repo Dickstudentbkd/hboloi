@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+}
+
+aside {
+  background-color: rgba(200, 100, 100, .5);
+  height: 450px;
+  margin-right: 1em;
+  overflow-y: auto;
+  padding: 0 1em;
+  width: 300px;
+}
+
+h2 {
+  background-color: rgba(200, 100, 100, 1);
+  margin: 0;
+  position: sticky;
+  top: 0;
+}
+
+article {
+  margin-top: 2em;
+}
+
+article:last-of-type {
+  margin-bottom: 100vh;
+}
+

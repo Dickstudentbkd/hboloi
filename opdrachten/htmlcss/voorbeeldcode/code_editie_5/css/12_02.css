@@ -1,0 +1,165 @@
+body {
+  padding-bottom: 100vh;
+}
+
+.repeat {
+  margin-top: 3em;
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.repeat div {
+  background-color: lightgrey;
+  background-image: url('../images/schelp_100.png');
+  width: 200px;
+  height: 200px;
+}
+
+.repeat div:nth-child(2) {
+  background-repeat: repeat-x;
+}
+
+.repeat div:nth-child(3) {
+  background-repeat: repeat-y;
+}
+
+.space {
+  margin-top: 3em;
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.space div {
+  background-color: lightgrey;
+  background-image: url('../images/schelp_100.png');
+  width: 325px;
+  height: 150px;
+}
+
+.space div:nth-child(1) {
+  background-repeat: space;
+}
+
+.space div:nth-child(2) {
+  background-repeat: round;
+}
+
+.clip {
+  display: flex;
+}
+
+.clip > div {
+  box-sizing: content-box;
+  margin-top: 3em;
+  width: 400px;
+  height: calc((400 / 1920) * 1369px);
+  background-image: url('../images/madelief.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 40px solid hsla(50, 50%, 90%, .5);
+}
+
+.clip > div:nth-child(2) {
+  margin-left: 1em;
+  background-repeat: repeat;
+}
+
+.sprite {
+  margin-top: 3em;
+  width: 600px;
+  height: 428px;
+  background-image: url('../images/sprite.png');
+}
+
+.sprite p {
+  background-color: hsl(60, 10%, 50%);
+  color: hsl(60, 100%, 50%);
+  font-size: 6em;
+  text-align: center;
+}
+
+.sprite:hover {
+  background-position: 600px 0;
+  cursor: pointer;
+}
+
+.background { /*algemeen */
+  margin-top: 3em;
+  width: 600px;
+  height: 400px;
+  border: 2em solid hsla(50, 75%, 50%, .5);
+}
+
+/*.background {
+	background: url('../images/schelp_200.png') 40% / 10em 10em hsl(200, 75%, 50%) round fixed border-box;
+}*/
+.background {
+  background-image: url('../images/schelp_200.png');
+  background-position: 40% 50%;
+  background-size: 10em 10em;
+  background-color: hsl(200, 75%, 50%);
+  background-repeat: round;
+  background-attachment: fixed;
+  background-clip: border-box;
+  background-origin: border-box;
+}
+
+.m-background {
+  margin-top: 3em;
+  width: 600px;
+  height: 400px;
+  background-image: url('../images/CSS3_logo.png'),
+  url('../images/tim-mossholder-1362421-unsplash.jpg');
+  background-position: bottom 20% right 30%, center center;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-gap: 1em;
+  margin-top: 3em;
+}
+
+.grid > * {
+  box-sizing: border-box;
+  padding: 2em;
+}
+
+.origin {
+  background-image: url("../images/border-image.png");
+  background-repeat: no-repeat;
+  border: 20px solid hsla(180, 50%, 50%, .3);
+  height: 200px;
+  width: 200px;
+}
+
+.size {
+  background-image: url("../images/schelp_200.png");
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  height: 300px;
+  width: 300px;
+}
+.contain {
+  background-size: contain;
+}
+.cover {
+  background-size: cover;
+}
+
+.border {
+  background-origin: border-box;
+}
+
+.padding {
+  background-origin: padding-box;
+}
+
+.content {
+  background-origin: content-box;
+}
+

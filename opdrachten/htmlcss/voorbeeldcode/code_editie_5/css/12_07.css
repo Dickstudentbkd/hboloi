@@ -1,0 +1,43 @@
+body {
+  background-color: hsl(80, 100%, 90%);
+  font-size: 16px;
+  margin: 0;
+}
+header {
+  background-image: linear-gradient(to bottom, hsl(205, 100%, 50%), hsl(80, 100%, 50%));
+  clip-path: polygon(50% 100%, 0 35%, 0 0, 100% 0, 100% 35%);
+  cursor: pointer;
+  height:400px;
+  transition: clip-path .5s ease;
+}
+header:hover {
+  clip-path: polygon(50% 65%, 0 90%, 0 0, 100% 0, 100% 90%);
+}
+h1 {
+  color: white;
+  font: 4em Consolas, sans-serif;
+  margin: 0;
+  padding-top: .5em;
+  text-align: center;
+}
+
+nav {
+  box-shadow: -1px 0 4px hsl(80, 100%, 10%);
+  height: 150px;
+  margin-top: 5px;
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+}
+li {
+  cursor: pointer;
+  padding: 1em;
+}
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 5em;
+    padding-top: 1em;
+  }
+}

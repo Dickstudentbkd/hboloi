@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 2rem;
+    font-size: 16px;
+}
+
+.box {
+    height: 100px;
+    margin-bottom: 1rem;
+    color: white;
+    padding: 1rem;
+}
+
+.px {
+    width: 200px;
+    background-color: #3498db;
+}
+
+.perc {
+    width: 50%;
+    background-color: #e67e22;
+}
+
+.vw {
+    width: 50vw;
+    background-color: #2ecc71;
+}
+
+.vh {
+    height: 50vh;
+    background-color: #9b59b6;
+}

@@ -1,0 +1,190 @@
+.animate1 {
+  width: 300px;
+  height: 300px;
+  animation-name: kleur;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: initial;
+  animation-direction: alternate;
+  animation-fill-mode: initial;
+  animation-play-state: initial;
+}
+
+@keyframes kleur {
+  0% {
+    background-color: hsl(150, 50%, 100%);
+  }
+  25% {
+    background-color: hsl(150, 50%, 75%);
+  }
+  50% {
+    background-color: hsl(150, 50%, 50%);
+  }
+  75% {
+    background-color: hsl(150, 50%, 25%);
+  }
+  100% {
+    background-color: hsl(150, 50%, 0%);
+  }
+}
+
+.animate2 {
+  width: 300px;
+  height: 300px;
+  animation-name: kleur-en-vorm;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: initial;
+  animation-direction: alternate;
+  animation-fill-mode: initial;
+  animation-play-state: initial;
+}
+
+@keyframes kleur-en-vorm {
+  0% {
+    background-color: hsl(150, 50%, 100%);
+    transform: scale(0) rotate(0);
+  }
+  25% {
+    background-color: hsl(150, 50%, 75%);
+    border-radius: 0;
+  }
+  50% {
+    background-color: hsl(150, 50%, 50%);
+  }
+  75% {
+    background-color: hsl(150, 50%, 25%);
+  }
+  100% {
+    background-color: hsl(150, 50%, 0%);
+    transform: scale(1) rotate(360deg);
+    border-radius: 50%;
+  }
+}
+
+
+.spiekbriefje {
+  width: 400px;
+  padding: 1em;
+  position: relative;
+  background-color: rgb(200, 150, 250);
+  box-shadow: 0 0 4px hsla(0, 0%, 0%, .14), 0 3px 4px hsla(0, 0%, 0%, .12), 0 1px 5px hsla(0, 0%, 0%, .20);
+}
+
+
+.slider {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 90%;
+  height: calc(90% - 1em);
+  background-color: rgb(200, 150, 250);
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  box-shadow: 0 0 4px hsla(0, 0%, 0%, .14), 0 3px 4px hsla(0, 0%, 0%, .12), 0 1px 5px hsla(0, 0%, 0%, .20);
+  /*transform-origin: left bottom; /* leuk in combinbatie met transform: rotate */
+  transition: all .5s ease;
+}
+
+.spiekbriefje:hover .slider {
+  /*transform: translateX(400px);*/
+  transform: translateX(240px) translateY(-60px) rotate(.20turn);
+}
+
+
+.transform {
+  display: flex;
+  justify-content: space-between;
+  margin: 3em 0;
+  width: 600px;
+  padding: 2em;
+  background-color: #eee;
+  box-shadow: 0 0 4px hsla(0, 0%, 0%, .14), 0 3px 4px hsla(0, 0%, 0%, .12), 0 1px 5px hsla(0, 0%, 0%, .20);
+}
+
+.transform > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  color: white;
+  font-family: sans-serif;
+  background-color: #999;
+  box-shadow: 0 0 4px hsla(0, 0%, 0%, .14), 0 3px 4px hsla(0, 0%, 0%, .12), 0 1px 5px hsla(0, 0%, 0%, .20);
+}
+
+.scale > div:last-child {
+  transform: scale(1.5);
+}
+
+.rotate > div:last-child {
+  transform: rotate(.25turn);
+}
+
+.skew > div:last-child {
+  transform: skew(35deg, 15deg);
+}
+
+
+.menu nav {
+  margin-top: 3em;
+  position: relative;
+  width: 150px;
+}
+
+.menu input {
+  display: none;
+}
+
+.menu label {
+  background-color: hsl(200, 100%, 50%);
+  color: white;
+  display: block;
+  padding: .75em;
+  font: 1.2em sans-serif;
+  text-align: center;
+}
+
+.menu label::after {
+  content: " +";
+}
+
+.menu ul {
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 64px;
+  width: 150px;
+  background-color: hsl(200, 100%, 50%);
+  transform-origin: center -40px;
+  transform: scaleY(0);
+  transition: all .3s ease-out;
+}
+
+.menu a {
+  border: 2px solid transparent;
+  display: block;
+  padding: .5em;
+  color: white;
+  text-decoration: none;
+  transition: all .2s ease-in-out .05s;
+}
+
+.menu a:hover {
+  background-color: white;
+  color: hsl(200, 100%, 50%);
+  border: 2px solid hsl(200, 100%, 50%);
+}
+
+input:checked ~ ul {
+  transform: scaleY(1);
+}
+
+input:checked ~ label::after {
+  content: " -";
+}
+

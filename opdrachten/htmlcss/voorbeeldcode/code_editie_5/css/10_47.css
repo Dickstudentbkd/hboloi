@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  max-width: initial;
+}
+.column {
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+}
+h2 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: center;
+}

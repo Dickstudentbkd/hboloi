@@ -1,0 +1,18 @@
+.flex{
+  background-color: hsl(140, 70%, 70%);
+  border: 2px solid hsl(140, 70%, 15%);
+  border-radius: 6px;
+  color: hsl(140, 5%, 5%);
+  margin: 20px;
+  width: 700px;
+}
+[class^="flex"] > * {
+  background-color: hsl(140, 50%, 50%);
+  border: 2px solid hsl(140, 70%, 15%);
+  border-radius: 6px;
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,24 @@
+article {
+  column-width: 200px;
+  column-gap: 2em;
+  column-rule-color: darkgreen;
+  column-rule-style: solid;
+  column-rule-width: 3px;
+  padding: 1em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+p + p {
+  margin-top: 1em;
+}
+figure {
+  break-inside: avoid-column;
+  margin: 1em 0;
+  font-size: 1em;
+}
+img {
+  width: 100%;
+}

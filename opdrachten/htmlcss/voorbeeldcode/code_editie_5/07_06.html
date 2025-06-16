@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>07_06</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: separate;
+      border-spacing: 2px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    caption {
+      font-style: italic;
+    }
+    caption span {
+      font-weight: 600;
+    }
+  </style>
+<body>
+<table>
+  <caption>
+    <span>Tabel 1</span> Voorbeeld met alle tabelelementen en het overspannen van rijen en kolommen.
+  </caption>
+  <thead>
+  <tr>
+    <th colspan="4">De kop van de tabel</th>
+    <th>Laatste kolom</th>
+  </tr>
+  <tr>
+    <td colspan="4">Onderkop</td>
+    <td>Onderkop</td>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>totaal 1</td>
+    <td>totaal 2</td>
+    <td>totaal 3</td>
+    <td>totaal 4</td>
+    <td>totaal 5</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <th colspan="4">Tussenkop over 4 kolommen</th>
+    <th>Tussenkop</th>
+  </tr>
+  <tr>
+    <td>kolom 1</td>
+    <td>kolom 2</td>
+    <td>kolom 3</td>
+    <td>kolom 4</td>
+    <td rowspan="2">kolom 5, 2 rijen</td>
+  </tr>
+  <tr>
+    <td>kolom 1</td>
+    <td>kolom 2</td>
+    <td>kolom 3</td>
+    <td>kolom 4</td>
+  </tr>
+  </tbody>
+  <tbody>
+  <tr>
+    <th colspan="4">Tussenkop over 4 kolommen</th>
+    <th>Tussenkop</th>
+  </tr>
+  <tr>
+    <td>kolom 1</td>
+    <td>kolom 2</td>
+    <td>kolom 3</td>
+    <td>kolom 4</td>
+    <td rowspan="2">kolom 5, 2 rijen</td>
+  </tr>
+  <tr>
+    <td>kolom 1</td>
+    <td>kolom 2</td>
+    <td>kolom 3</td>
+    <td>kolom 4</td>
+  </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>

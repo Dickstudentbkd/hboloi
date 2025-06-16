@@ -1,0 +1,33 @@
+.positie {
+    position: relative;
+    left: 75px;
+    top: 150px;
+    z-index: 1;
+}
+.flex {
+    /*border: 2px dashed hsl(140, 70%, 15%);*/
+    border: 2px dashed red;
+    display: flex;
+    margin-block-end: 200px;
+    max-inline-size: max-content;
+    background-color: hsl(140, 70%, 90%);
+    z-index: 5;
+}
+.flex > * {
+    align-items: center;
+    background-color:  hsl(140, 70%, 70%);
+    block-size: 200px;
+    border: 2px solid hsl(140, 70%, 15%);
+    border-radius: 6px;
+    color: hsl(140, 5%, 5%);
+    display: flex;
+    inline-size: 200px;
+    justify-content: center;
+    margin: 0;
+    padding: 1em;
+}
+.feedback {
+    position: fixed;
+    inset-block: 97%;
+    inset-inline-start: 0;
+}

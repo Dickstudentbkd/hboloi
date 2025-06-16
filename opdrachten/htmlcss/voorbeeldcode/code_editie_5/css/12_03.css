@@ -1,0 +1,59 @@
+article {
+	width: 700px;
+	padding: .5em;
+	margin-top: 3em;
+	background-color: lightcoral;
+}
+
+div:not([class]) {
+	width: 400px;
+	height: 400px;
+	border: 1px solid black;
+	margin: 1em 0;
+}
+.linear :nth-child(1) {
+	background-image: linear-gradient(180deg, black, white);
+}
+.linear :nth-child(2) {
+	background-image: linear-gradient(135deg, black, white);
+}
+.linear :nth-child(3) {
+	background-image: linear-gradient(black, grey, white, grey,  black);
+}
+.linear :nth-child(4) {
+	background-image: linear-gradient(black, white, grey 50%);
+}
+.linear :nth-child(5) {
+	background-image: linear-gradient(to right, white 33%, black 33%, black 66%, white 66%);
+}
+.linear :nth-child(6) {
+	background-image: linear-gradient(to right, white 15px, black 15px);
+	background-size: 25px 1px; /* 25px is de breedte en 1px de hoogte van het verloop*/
+	background-repeat: repeat;
+}
+
+.radial :nth-child(1) {
+	background-image: radial-gradient(circle, white, black);
+}
+.radial :nth-child(2) {
+	background-image: radial-gradient(circle at left, white, black);
+}
+.radial :nth-child(3) {
+	background-image: radial-gradient(farthest-corner circle at right bottom, white, black);
+}
+
+.repeating :nth-child(1) {
+	background-image: repeating-linear-gradient(black, grey, white 50px);
+}
+.repeating :nth-child(2) {
+	background-image: repeating-linear-gradient(black, grey, white 50px, grey 70px);
+}
+.repeating :nth-child(3) {
+	background-image: repeating-linear-gradient(
+		to right, 
+		white, 
+		white 15px, 
+		black 15px, 
+		black 25px);
+}
+

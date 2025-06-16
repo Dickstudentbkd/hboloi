@@ -1,0 +1,40 @@
+.menu {
+	background-color: rgb(150,200,250);
+	font: 1.2em sans-serif;
+	margin: 100px 0;
+	width: 700px;
+}
+.menu ul {
+	display: flex;
+	justify-content: space-between;
+	padding: .5em;
+}
+.menu a {
+	padding: .5em;
+	color: rgb(50,100,150);
+	transition: all .5s ease-in-out .05s;
+	/*transition: all .5s steps(4, end) .05s;*/
+	/*transition: all .5s cubic-bezier(0.1, 0.7, 1.0, 0.1) .05s;*/
+	/*transition: background-color .5s ease-in .05s, color .75s ease-in-out .05s,*/
+
+}
+.menu a:hover,
+.menu a:focus {
+	background-color: rgb(50,100,150);
+	color: white;
+}
+
+
+button {
+	background-color: tomato;
+	color: white;
+	font: 700 3em sans-serif;
+	padding: 1em;
+	transition-property: background-color, color;
+	transition-timing-function: ease;
+	transition-duration: .5s;
+}
+.clicked {
+	background-color: turquoise;
+	color: darkblue;
+}

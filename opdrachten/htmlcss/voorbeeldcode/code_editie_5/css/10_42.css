@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
+  margin: 0;
+}
+
+.gap {
+  gap: 20px;
+}
+
+.grid > * {
+  height: 200px;
+  width: 200px;
+}
+
+.wrapper > * {
+  float: left;
+  margin: 20px;
+}

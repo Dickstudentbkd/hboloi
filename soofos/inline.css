@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+em {
+    background-color: darkgoldenrod;
+    color: white;
+}

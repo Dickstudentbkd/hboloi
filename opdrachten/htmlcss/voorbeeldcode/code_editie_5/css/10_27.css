@@ -1,0 +1,25 @@
+.pf-container {
+  columns: 200px 4;
+  column-gap: 1em;
+
+  border: 1px solid black;
+  padding: 1em;
+}
+
+.pf-card {
+  break-inside: avoid;
+
+  background-color: #eee;
+  font-size: 1em;
+  font-style: initial;
+  margin: 0 0 1em 0;
+  padding: 10px;
+}
+
+.pf-card h3 {
+  margin-top: 0;
+}
+
+img {
+  width: 100%;
+}

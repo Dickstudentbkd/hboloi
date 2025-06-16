@@ -1,0 +1,13 @@
+.flex {
+  display: flex;
+  width: 350px;
+}
+.flex > * {
+  margin: 8px 0;
+}
+.wrap {
+  flex-flow: wrap;
+}
+.wrap-reverse {
+  flex-flow: wrap-reverse;
+}

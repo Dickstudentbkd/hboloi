@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>07_04</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: separate;
+      border-spacing: 2px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    col:first-child {
+      background-color: #333333;
+    }
+    col:last-child {
+      background-color: #aaaaaa;
+    }
+    th:nth-child(1),
+    td:nth-child(1),
+    td:nth-child(2),
+    td:nth-child(3),
+    td:nth-child(4) {
+      color: white;
+    }
+  </style>
+<body>
+<table>
+  <caption>
+    <p>Tabel 1. Tijdlijn van HTML-specificaties.</p>
+  </caption>
+  <colgroup>
+    <col span="4">
+    <col span="4">
+  </colgroup>
+  <thead>
+  <tr>
+    <th colspan="4">Prehistorie</th>
+    <th colspan="4">Moderne tijd</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>1995</td>
+    <td>1997</td>
+    <td>1998</td>
+    <td>1999</td>
+    <td>2014</td>
+    <td>2016</td>
+    <td>2018</td>
+    <td>2020</td>
+  </tr>
+  <tr>
+    <td>HTML 2.0</td>
+    <td>HTML 3.2</td>
+    <td>HTML 4.0</td>
+    <td>HTML 4.01</td>
+    <td>HTML 5</td>
+    <td>HTML 5.1</td>
+    <td>HTML 5.2</td>
+    <td>HTML 5.3</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+html {
+  box-sizing: border-box;
+  font-size: 1.125em;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: hsl(0, 0%, 96%);
+  padding: 8px;
+  position: fixed;
+  top: 0;
+}
+
+header h1 {
+  color: hsl(0, 0%, 40%);
+  font-size: 1.125rem;
+}
+
+.logo {
+  color: hsl(0, 0%, 60%);
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.logo span:nth-child(2) {
+  color: hsl(0, 80%, 50%);
+}
+
+.breaking {
+  margin-block-start: 66px;
+}
+
+.breaking-item {
+  background-size: cover;
+  color: white;
+  max-height: 400px;
+  min-height: 300px;
+}
+
+.breaking-item:first-child {
+  background-image: url(https://dummyimage.com/1200x675/ccc/ccc);
+}
+
+.breaking-item:last-child {
+  background-image: url(https://dummyimage.com/1200x675/999/999);
+}
+main {
+  margin: 0 8px;
+}
+
+.nieuws-items {
+  font-size: 14px;
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.nieuws-item img {
+  width: 100%;
+}
+
+.laatste-items h3 {
+  color: hsl(0, 80%, 50%);
+  font-size: 11px;
+  list-style: none;
+  margin: 0 0 8px 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+.laatste-item {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.laatste-item p {
+  margin: 0;
+}
+.laatste-item img {
+  width: 100%;
+}
+
+footer {
+  background-color: hsl(0, 0%, 96%);
+  padding: 8px;
+}

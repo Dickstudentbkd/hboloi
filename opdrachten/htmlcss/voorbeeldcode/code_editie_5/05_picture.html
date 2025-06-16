@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>05_picture</title>
+</head>
+<body>
+
+<!--In het attribuut style zorgt max-width ervoor dat de afbeelding nooit breder kan worden dan het venster-->
+<picture>
+  <source media="(max-width: 360px)" srcset="images/zeilschip-320.jpg">
+  <source media="(max-width: 800px)" srcset="images/zeilschip-800.jpg">
+  <source media="(max-width: 1024px)" srcset="images/zeilschip-1024.jpg">
+  <source srcset="images/zeilschip-1920.jpg">
+  <img src="images/zeilschip-1024.jpg" alt="Zeilschip op zee bij ondergaande zon." style="max-width: 100%">
+</picture>
+
+
+</body>
+</html>
+

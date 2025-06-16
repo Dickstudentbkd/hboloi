@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>09_09</title>
+  <link rel="stylesheet" href="./css/base.css">
+</head>
+<style>
+  .container-run-in {
+    width: 700px;
+    margin: 50px 0;
+  }
+
+  .run-in {
+    display: run-in;
+    display: inline;
+    /* simulatie van run-in */
+  }
+
+  .run-in + p {
+    display: inline;
+  }
+
+  .run-in + p > em {
+    outline: 1px solid red;
+  }
+
+
+</style>
+<body>
+<div class="container-run-in">
+  <h2 class="run-in">De inlopende kop</h2>
+  <p>Deze alinea is een <em>block-level box</em> en de cursieve tekst in de (rode) rechthoek is een inline-level box. De kop heeft display: run-in, maar de weergave is een simulatie, want de browser is dit trucje verleerd.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.flex {
+    align-items: center;
+    block-size: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+p:first-of-type {
+    color: red;
+    font-size: 1em;
+}
+p {
+    font-size: 2em;
+}
+.twee {
+    font-size: 2rem;
+}

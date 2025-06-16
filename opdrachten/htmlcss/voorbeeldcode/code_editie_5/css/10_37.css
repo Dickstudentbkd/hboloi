@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  grid-template-columns: [col-start] 1fr [col-1-end] 1fr [col-center] 1fr 1fr [col-end];
+  grid-template-rows: [row-start] 100px [row-1-end row-2-start] 100px [row-center] 100px [row-4-start] 100px [row-end];
+}
+
+.grid-item:nth-child(1) {
+  grid-column: col-start / span 4;
+  grid-row: row-start / row-1-end;
+}
+
+.grid-item:nth-child(2) {
+  grid-column: col-start / span 2;
+  grid-row: row-2-start / span 2;
+}
+
+.grid-item:nth-child(3) {
+  grid-column: col-center / span 2;
+  grid-row: row-center / span 2;
+}
+.grid-item:nth-child(4) {
+  grid-column: col-1-end / col-end;
+  grid-row: row-4-start / row-end;
+}
+
+/* geen opmaak voor grid */
+.grid-item:nth-child(3) {
+  align-items: start;
+  opacity: .75;
+
+}
+.grid-item:nth-child(4) {
+  opacity: .75;
+}

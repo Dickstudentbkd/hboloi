@@ -1,0 +1,21 @@
+.flex {
+  display: flex;
+}
+.initial > * {
+  flex: initial;
+}
+.auto > * {
+  flex: auto;
+}
+.none > * {
+  flex: none;
+}
+.twee > *:nth-child(2) {
+  flex: 2;
+}
+.drie > *:nth-child(3){
+  flex: 3;
+}
+.container {
+  width: 300px;
+}

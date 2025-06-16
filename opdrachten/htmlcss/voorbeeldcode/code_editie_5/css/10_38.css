@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-template-rows: [header-start] auto [article-start] auto;
+}
+
+header {
+  grid-column: col-start / span 12;
+  grid-row: header-start;
+}
+article {
+  grid-column: col-start 6 / span 4;
+  grid-row: article-start;
+}
+header {
+  padding: 1rem;
+}
+article {
+  height: 300px
+}

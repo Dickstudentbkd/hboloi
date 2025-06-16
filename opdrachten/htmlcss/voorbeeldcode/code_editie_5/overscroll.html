@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>09_08</title>
+  <link rel="stylesheet" href="css/base.css">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .contacten-header {
+      background-color: indigo;
+      padding: .5em 1em;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .contacten-header h2 {
+      color: floralwhite;
+      font-size: 1.25em;
+      margin: 0;
+    }
+
+    .contacten-lijst,
+    .chat ul {
+      list-style: none;
+      margin-top: 3.25em;
+      padding: 0 1em;
+    }
+
+    .contacten-lijst li {
+      border-bottom: 1px solid mediumpurple;
+      padding: .5em 0;
+    }
+
+    .chat-container {
+      bottom: 1em;
+      display: flex;
+      justify-content: space-around;
+      position: fixed;
+      width: 100%;
+    }
+
+    .chat {
+      background-color: floralwhite;
+      border: 1px solid mediumpurple;
+      font-size: .8em;
+      margin: 0 1em;
+      width: 200px;
+    }
+
+    .chat header {
+      background-color: indigo;
+      color: floralwhite;
+      text-align: center;
+    }
+
+    .chat h3 {
+      font-family: monospace;
+      margin: 0;
+      padding: .5em;
+    }
+
+    .chat span {
+      display: block;
+    }
+
+    .chat ul {
+      height: 20em;
+      margin-top: .5em;
+      overflow: auto;
+      overscroll-behavior: auto;
+    }
+
+    .chat li {
+      margin: .5em 0;
+      padding: .5em;
+    }
+
+    .chat li:nth-child(odd) {
+      background-color: plum;
+    }
+
+    .chat li:nth-child(even) {
+      background-color: darksalmon;
+    }
+
+    .chat:nth-of-type(2) {
+      /*left: 50%;*/
+      /*position: fixed;*/
+    }
+
+    .chat:nth-of-type(2) ul {
+      overscroll-behavior: contain;
+    }
+
+    .chat:nth-of-type(3) {
+      /*left: 80%;*/
+      /*position: fixed;*/
+    }
+
+    .chat:nth-of-type(3) ul {
+      overscroll-behavior: contain;
+    }
+  </style>
+</head>
+<body>
+<div class="chat-container">
+  <div class="chat">
+    <header>
+      <h3>overscroll-behavior<span>auto</span></h3>
+    </header>
+    <ul>
+      <li>Hoi Peter.</li>
+      <li>Hoi Dennis, wat kan ik voor je doen?</li>
+      <li>Ik ben een paar pixels kwijt. Heb jij die toevallig gezien?</li>
+      <li>Er lagen er een paar in de parkeergarage.</li>
+      <li>Nee, die kunnen het niet zijn. Ik ben ze gisteren kwijtgeraakt en dan zouden ze nu wel plat zijn.</li>
+      <li>Dan weet ik het ook niet.</li>
+      <li>Oké, bedankt.</li>
+    </ul>
+  </div>
+
+  <div class="chat">
+    <header>
+      <h3>overscroll-behavior<span>contain</span></h3>
+    </header>
+    <ul class="chat-2">
+      <li>Hoi Peter.</li>
+      <li>Hoi Dennis, wat kan ik voor je doen?</li>
+      <li>Ik ben een paar pixels kwijt. Heb jij die toevallig gezien?</li>
+      <li>Er lagen er een paar in de parkeergarage.</li>
+      <li>Nee, die kunnen het niet zijn. Ik ben ze gisteren kwijtgeraakt en dan zouden ze nu wel plat zijn.</li>
+      <li>Dan weet ik het ook niet.</li>
+      <li>Oké, bedankt.</li>
+    </ul>
+  </div>
+
+  <div class="chat">
+    <header>
+      <h3>overscroll-behavior<span>none</span></h3>
+    </header>
+    <ul class="chat-3">
+      <li>Hoi Peter.</li>
+      <li>Hoi Dennis, wat kan ik voor je doen?</li>
+      <li>Ik ben een paar pixels kwijt. Heb jij die toevallig gezien?</li>
+      <li>Er lagen er een paar in de parkeergarage.</li>
+      <li>Nee, die kunnen het niet zijn. Ik ben ze gisteren kwijtgeraakt en dan zouden ze nu wel plat zijn.</li>
+      <li>Dan weet ik het ook niet.</li>
+      <li>Oké, bedankt.</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="contacten">
+  <header class="contacten-header"><h2>Contacten</h2></header>
+  <ul class="contacten-lijst">
+    <li>Persoon 1</li>
+    <li>Persoon 2</li>
+    <li>Persoon 3</li>
+    <li>Persoon 4</li>
+    <li>Persoon 5</li>
+    <li>Persoon 6</li>
+    <li>Persoon 7</li>
+    <li>Persoon 8</li>
+    <li>Persoon 9</li>
+    <li>Persoon 10</li>
+    <li>Persoon 11</li>
+    <li>Persoon 12</li>
+    <li>Persoon 13</li>
+    <li>Persoon 14</li>
+    <li>Persoon 15</li>
+    <li>Persoon 16</li>
+    <li>Persoon 17</li>
+    <li>Persoon 18</li>
+    <li>Persoon 19</li>
+    <li>Persoon 20</li>
+    <li>Persoon 21</li>
+    <li>Persoon 22</li>
+    <li>Persoon 23</li>
+    <li>Persoon 24</li>
+    <li>Persoon 25</li>
+    <li>Persoon 26</li>
+    <li>Persoon 27</li>
+    <li>Persoon 28</li>
+    <li>Persoon 29</li>
+    <li>Persoon 30</li>
+    <li>Persoon 31</li>
+    <li>Persoon 32</li>
+    <li>Persoon 33</li>
+    <li>Persoon 34</li>
+    <li>Persoon 35</li>
+    <li>Persoon 36</li>
+    <li>Persoon 37</li>
+    <li>Persoon 38</li>
+    <li>Persoon 39</li>
+    <li>Persoon 40</li>
+    <li>Persoon 41</li>
+    <li>Persoon 42</li>
+    <li>Persoon 43</li>
+    <li>Persoon 44</li>
+    <li>Persoon 45</li>
+    <li>Persoon 46</li>
+    <li>Persoon 47</li>
+    <li>Persoon 48</li>
+    <li>Persoon 49</li>
+    <li>Persoon 50</li>
+    <li>Persoon 51</li>
+    <li>Persoon 52</li>
+    <li>Persoon 53</li>
+    <li>Persoon 54</li>
+    <li>Persoon 55</li>
+    <li>Persoon 56</li>
+    <li>Persoon 57</li>
+    <li>Persoon 58</li>
+    <li>Persoon 59</li>
+    <li>Persoon 60</li>
+    <li>Persoon 61</li>
+    <li>Persoon 62</li>
+    <li>Persoon 63</li>
+    <li>Persoon 64</li>
+    <li>Persoon 65</li>
+    <li>Persoon 66</li>
+    <li>Persoon 67</li>
+    <li>Persoon 68</li>
+    <li>Persoon 69</li>
+    <li>Persoon 70</li>
+    <li>Persoon 71</li>
+    <li>Persoon 72</li>
+    <li>Persoon 73</li>
+    <li>Persoon 74</li>
+    <li>Persoon 75</li>
+  </ul>
+</div>
+</body>
+</html>

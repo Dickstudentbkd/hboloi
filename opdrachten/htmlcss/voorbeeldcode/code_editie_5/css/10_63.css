@@ -1,0 +1,15 @@
+ul {
+  display: flex;
+}
+ul > li:last-child {
+  margin: 0 0 0 auto;
+}
+input {
+  font-size: 1em;
+  height: 2em;
+  width: 10ch;
+}
+input:focus {
+  width: 20ch;
+  transition: all ease-in-out 250ms;
+}

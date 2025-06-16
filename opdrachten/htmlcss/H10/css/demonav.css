@@ -1,0 +1,64 @@
+body {
+    background-color: #FFA500;
+}
+
+
+    .flex {
+        align-items: center;
+        block-size: 4rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    :is(.menu, .logo, .zoekvak) {
+        display: flex;
+    }
+    .menu > *:not(.mobile) {
+        display: none;
+    }
+    button {
+        align-items: center;
+        display: flex;
+    }
+    input[type="text"] {
+        inline-size: 7ch;
+        transition: all ease-in-out 250ms;
+    }
+    .zoekvak:focus-within input[type="text"] {
+        inline-size: 150vw;
+        transform: scale(1.1) translateX(-1px);
+    }
+
+/*.navigation {*/
+/*    display: flex;*/
+/*    flex-flow: row wrap;*/
+/*    justify-content: flex-end;*/
+
+/*    list-style: none;*/
+/*    margin: 0;*/
+/*    background: deepskyblue;*/
+/*}*/
+/*.navigation a {*/
+/*    text-decoration: none;*/
+/*    display: block;*/
+/*    padding: 1em;*/
+/*    color: white;*/
+/*}*/
+/*.navigation a:hover {*/
+/*    background: #1565C0;*/
+/*}*/
+/*li:last-child {*/
+/*    margin: 0 0 0 auto;*/
+/*}*/
+
+@media all and (max-width: 700px) {
+    .menu > *:not(.mobile) {
+        display: initial;
+    }
+    .menu .mobile {
+        display: none;
+    }
+    .zoekvak:focus-within input[type="text"] {
+        inline-size: 40vw;
+    }
+}

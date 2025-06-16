@@ -1,0 +1,17 @@
+.flex {
+  display: flex;
+  height: 200px;
+}
+.flex > * {
+  font-family: Consolas, sans-serif;
+  margin: auto
+}
+.push > * {
+  margin: initial;
+}
+.push > *:nth-child(1) {
+  margin-right: auto;
+}
+.push > *:nth-child(2) {
+  margin-left: auto;
+}

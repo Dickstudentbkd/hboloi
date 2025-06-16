@@ -1,0 +1,16 @@
+.container {
+  display: flow-root;
+  background-color: #ccc;
+  margin-bottom: 1em;
+  padding: 1em 0 1em 1em;
+}
+h2 {
+  margin-top: 0;
+}
+.container > div {
+  float: left;
+  background-color: #ddd;
+  height: 300px;
+  margin: 0 1em 1em 0;
+  width: 150px;
+}

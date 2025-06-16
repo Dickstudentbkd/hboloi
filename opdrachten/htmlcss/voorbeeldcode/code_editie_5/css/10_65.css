@@ -1,0 +1,30 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 1rem;
+}
+.flex {
+  display: flex;
+  height: 350px;
+  width: 100%;
+  flex-flow: wrap;
+}
+
+.start {
+  align-content: flex-start;
+}
+.end{
+  align-content: flex-end;
+}
+.center{
+  align-content: center;
+}
+.between{
+  align-content: space-between;
+}
+.around {
+  align-content: space-around;
+}
+.stretch{
+  align-content: stretch;
+}

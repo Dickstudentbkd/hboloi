@@ -1,0 +1,21 @@
+article {
+  border: 1px solid black;
+  padding: 10px;
+}
+h2 {
+  margin-top: 0;
+}
+p {
+  line-height: 1.25;
+  margin: 0;
+}
+img {
+  float: left;
+  margin: 0 1em 1em 0;
+  width: 300px;
+}
+
+article:nth-of-type(2) img {
+  float: right;
+  margin: 0 0 1em 1em;
+}

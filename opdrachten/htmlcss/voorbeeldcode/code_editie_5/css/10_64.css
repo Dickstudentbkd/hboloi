@@ -1,0 +1,35 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+}
+.flex {
+  display: flex;
+  height: 200px;
+  width: max-content;
+}
+.start {
+  align-items: flex-start;
+}
+.end{
+  align-items: flex-end;
+}
+.center{
+  align-items: center;
+}
+.stretch {
+  align-items: stretch;
+}
+.baseline {
+  align-items: baseline;
+  grid-column: span 2;
+  width: auto;
+}
+.baseline > * {
+  flex: 1;
+}
+.baseline > *:nth-child(1) {
+  font-size: 75%;
+}
+.baseline > *:nth-child(2) {
+  font-size: 150%;
+}

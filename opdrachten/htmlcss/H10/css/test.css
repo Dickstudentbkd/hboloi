@@ -1,0 +1,38 @@
+.positie {
+    position: absolute;
+    inset-inline-start: 75px; /* left */
+    inset-block-start: 150px; /* top */
+    /*left: 75px;*/
+    /*top: 150px;*/
+    z-index: 1;
+}
+.flex {
+    border: 2px dashed hsl(140, 70%, 15%);
+    display: flex;
+    margin-block-end: 200px;
+    max-inline-size: max-content;
+    margin: 20px;
+}
+.flex > * {
+    align-items: center;
+    background-color: hsl(140, 70%, 70%);
+    block-size: 200px;
+    border: 2px solid hsl(140, 70%, 15%);
+    border-radius: 6px;
+    color: hsl(140, 5%, 5%);
+    display: flex;
+    inline-size: 200px;
+    justify-content: center;
+    margin: 0;
+    padding: 1em;
+}
+.naar-boven {
+    postion: fixed;
+    inset-blocked-end: 10px;
+    inset-inline-start: 0;
+}
+.feedback {
+    postion: fixed;
+    inset-block: 50%;
+    inset-inline-end: 0;
+}

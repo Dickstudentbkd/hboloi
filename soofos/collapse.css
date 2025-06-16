@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*,
+h1 {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: darkgoldenrod;
+}
+
+p {
+    background-color: gold;
+}
+
+h2 {
+    background-color: goldenrod;
+}

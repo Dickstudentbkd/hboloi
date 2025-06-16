@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>09_09</title>
+  <link rel="stylesheet" href="./css/base.css">
+</head>
+<style>
+  body {
+    display: grid;
+    grid-template-columns: max-content max-content;
+  }
+
+  .htb {
+    grid-area: 1 / 1;
+  }
+
+  div[dir="rtl"] {
+    grid-area: 1 / 1;
+    align-self: end;
+  }
+
+  @supports not (display: flow-root) {
+    .box {
+      overflow: auto;
+    }
+  }
+
+  .box {
+    background-color: lightgray;
+    block-size: 100px;
+    border-inline-start: 5px solid black;
+    display: flow-root;
+    inline-size: 300px;
+    margin: 50px;
+  }
+
+  /* De huidige manier */
+  /*
+  .box {
+      height: 100px;
+      border-left: 5px solid black;
+      width: 300px;
+    }
+  */
+
+  .htb {
+    writing-mode: horizontal-tb;
+  }
+
+  .htb::after {
+    content: "writing-mode: horizontal-tb";
+    padding: 1em;
+  }
+
+  .vrl {
+    writing-mode: vertical-rl;
+  }
+
+  .vrl::after {
+    content: "writing-mode: vertical-rl";
+    padding: 1em;
+
+  }
+
+  div[dir="rtl"]::after {
+    content: "dir=rtl";
+    padding: 1em;
+  }
+
+  p {
+    inline-size: -moz-max-content;
+    inline-size: max-content;
+    margin-block-start: 1em;
+    padding-inline-start: 1em;
+  }
+
+</style>
+<body>
+<div class="box htb"><p>Ik ben een regel tekst</p></div>
+<div class="box vrl"><p>Ik ben een regel tekst</p></div>
+<div dir="rtl" class="box"><p>Ik ben een regel tekst</p></div>
+</body>
+</html>

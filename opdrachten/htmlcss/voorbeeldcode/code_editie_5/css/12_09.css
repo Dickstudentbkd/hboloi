@@ -1,0 +1,28 @@
+.wrapper {
+  height: 500px;
+  isolation: isolate;
+  position: relative;
+  width: 500px;
+}
+.circle {
+  mix-blend-mode: screen;
+  border-radius: 50%;
+  height: 200px;
+  position: absolute;
+  width: 200px;
+}
+.r {
+  background-color: #ff0000;
+  top: 35%;
+  left: 35%;
+}
+.g {
+  background-color: #00ff00;
+  top: 35%;
+  left: 55%;
+}
+.b {
+  background-color: #0000ff;
+  top: 50%;
+  left: 45%;
+}

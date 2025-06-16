@@ -1,0 +1,42 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.menu {
+  display: flex;
+}
+a {
+  align-self: center;
+}
+.zoekvak {
+  display: flex;
+}
+
+
+.flex {
+  background-color: hsl(140, 70%, 70%);
+  border: 2px solid hsl(140, 70%, 15%);
+  border-radius: 6px;
+  color: hsl(140, 5%, 5%);
+  margin: 20px;
+}
+li {
+  padding: 8px;
+  border-right: 1px solid hsl(140, 70%, 15%);
+}
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+input[type="text"] {
+  min-width: 200px;
+  font-size: 1em;
+  padding-left: 8px;
+}
+input[type="text"]:focus {
+  transform: scale(1.5) translateX(-50px);
+  transition: all ease-in-out 250ms;
+}
+button {
+  background-color: hsl(140, 70%, 70%);
+}

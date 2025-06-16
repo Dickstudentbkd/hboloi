@@ -1,0 +1,44 @@
+body {
+  font: 20px/1.5 Roboto, sans-serif;
+}
+
+ul {
+  /*display: none;*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  transform: translateX(-100px);
+  transition: transform 250ms ease-out;
+}
+
+a:any-link,
+a:active {
+   text-decoration: none;
+   color: inherit;
+}
+.fas {
+  margin-right: 8px;
+}
+#menu-toggle {
+  display: none;
+}
+input:checked ~ ul {
+  /*display: initial;*/
+  transform: translateX(0);
+  transition: transform 200ms ease-in;
+}
+
+@media screen and (min-width: 768px) {
+  input:checked ~ ul,
+  ul {
+    display: flex;
+    transform: translateX(0);
+  }
+  li {
+    padding: 10px;
+  }
+  [for="menu-toggle"] {
+    display: none;
+  }
+}

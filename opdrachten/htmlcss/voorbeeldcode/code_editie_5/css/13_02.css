@@ -1,0 +1,23 @@
+.container {
+	width: 400px;
+	padding: 1em;
+	position: relative;
+	background-color: rgb(200,150,250);
+	box-shadow: 0 0 4px  hsla(0,0%,0%,.14), 0 3px 4px hsla(0,0%,0%,.12), 0 1px 5px hsla(0,0%,0%,.20);
+}
+.slider {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	width: 90%;
+	height: calc(90% - 1em);
+	background-color: rgb(200,150,250);
+	color: white;
+	font-family: sans-serif;
+	text-align: center;
+	box-shadow: 0 0 4px  hsla(0,0%,0%,.14), 0 3px 4px hsla(0,0%,0%,.12), 0 1px 5px hsla(0,0%,0%,.20);
+	transition: all .5s ease;
+}
+.container:hover .slider {
+	left: 400px;
+}

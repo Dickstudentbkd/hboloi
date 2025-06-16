@@ -1,0 +1,19 @@
+.flex {
+  display: flex;
+  margin-bottom: 200px;
+  border: 2px dashed hsl(140, 70%, 15%);
+  max-width: max-content;
+}
+.flex > * {
+  background-color: hsl(140, 70%, 70%);
+  border: 2px solid hsl(140, 70%, 15%);
+  border-radius: 6px;
+  color: hsl(140, 5%, 5%);
+  margin: 0;
+  padding: 1em;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

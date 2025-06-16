@@ -1,0 +1,99 @@
+div:not([class="flex"]) {
+	box-shadow: 0 0 4px  hsla(0,0%,0%,.14), 0 3px 4px hsla(0,0%,0%,.12), 0 1px 5px hsla(0,0%,0%,.20);
+	border-radius: 2px;
+}
+.flex {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: wrap;
+}
+.container {
+	margin: 100px 1em;
+	width: 300px;
+	height:300px;
+	background-color: #eee;
+}
+.no-transform {
+	width: 300px;
+	height:300px;
+	background-color: rgba(0,0,0,.2);
+}
+.transform {
+	width: 300px;
+	height:300px;
+	background-color: rgba(0,0,0,.2);
+	/*transform: perspective(250px) rotateY(60deg);*/
+	transform: rotateY(60deg) translateY(10px);
+}
+.perspective250 {
+	perspective: 250px;
+}
+.perspective {
+	perspective: 1000px;
+}
+.origin {
+	perspective-origin: right;
+}
+.preserve {
+	transform-style: preserve-3d;
+}
+.inner {
+	width: 200px;
+	height:200px;
+	background-color: rgba(0,0,0,.4);
+	transform-origin: top left ;
+	transform: rotateX(30deg);
+}
+.scale{
+	/*transform: none;*/
+	transform: scale3d(1.5, 1.5, 2) rotateY(60deg);
+}
+
+
+.voor {
+	transform: rotateY(60deg);	
+}
+.achter {
+	backface-visibility: visible !important;
+	transform: rotateY(120deg);
+}
+
+
+
+.bf-container {
+	margin: 2em;
+	width: 300px;
+	height: 300px;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	position: relative;
+	transition: .5s ease-in-out;
+}
+.backface {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font: 1.5em sans-serif;
+	width: 300px;
+	height: 300px;
+	background-color: rgba(0,0,0,.2);
+}
+
+.backface {
+	backface-visibility: hidden;
+}
+.back {
+	transform: rotateY(180deg);
+}
+.bf-wrapper:hover .bf-container {
+	transform: rotateY(180deg);
+}
+
+

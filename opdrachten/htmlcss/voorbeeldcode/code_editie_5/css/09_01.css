@@ -1,0 +1,255 @@
+img {
+	width: 400px;
+}
+
+
+.relative {
+	margin: 50px 0;
+}
+
+.relative>div {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.relative>div:nth-child(1) {
+	background-color: rgb(200, 100, 100);
+}
+
+.relative>div:nth-child(2) {
+	background-color: rgb(100, 200, 100);
+	position: relative;
+	top: -75px;
+	left: 75px;
+}
+
+.relative>div:nth-child(3) {
+	background-color: rgb(100, 100, 200);
+}
+
+.absolute {
+	position: relative;
+	/*padding: 50px 0;*/
+	margin: 50px 0;
+}
+
+.absolute>div {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.absolute>div:nth-child(1) {
+	background-color: rgb(200, 100, 100);
+}
+
+.absolute>div:nth-child(2) {
+	background-color: rgb(100, 200, 100);
+	position: absolute;
+	top: 75px;
+	left: 125px;
+	/*z-index: -1;*/
+}
+
+.absolute>div:nth-child(3) {
+	background-color: rgb(100, 100, 200);
+}
+
+.fixed {
+	position: relative;
+	/*padding: 50px 0;*/
+	margin: 50px 0;
+}
+
+.fixed>div {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.fixed>div:nth-child(1) {
+	background-color: rgb(200, 100, 100);
+}
+
+.fixed>div:nth-child(2) {
+	/* blok staat nu op 75 x 125 van de hoek linksboven van het browservenster */
+	background-color: rgb(100, 200, 100);
+	/*position: fixed;*/
+	top: 75px;
+	left: 125px;
+}
+
+.fixed>div:nth-child(3) {
+	background-color: rgb(100, 100, 200);
+}
+
+.float-container {
+	width: 700px;
+	margin: 100px 0;
+	border: 2px solid red;
+}
+
+.float {
+	float: left;
+	margin-right: 1em;
+}
+
+
+
+
+header {
+	height: 100px;
+	background-color: rgb(100, 100, 200);
+}
+
+.content-wrapper {
+	display: flow-root;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+main {
+	float: left;
+	width: 66%;
+	min-height: 15em;
+	background-color: rgb(200, 100, 100);
+}
+
+.sidebar {
+	float: left;
+	width: 34%;
+	min-height: 10em;
+	background-color: rgb(200, 0, 200);
+}
+
+footer {
+	height: 100px;
+	background-color: rgb(100, 200, 100);
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.sticky {
+	width: 300px;
+	height: 400px;
+	overflow: scroll;
+	background-color: rgba(200, 100, 100, .5);
+	margin: 100px 0;
+}
+
+.sticky h2 {
+	position: sticky;
+	top: -1px;
+	background-color: rgba(200, 100, 100, 1);
+	/*margin-bottom: 0;*/
+}
+
+.sticky>article {
+	outline: 1px solid black;
+}
+
+.sticky>article:last-of-type {
+	margin-bottom: 400px;
+}
+
+.text-overflow {
+	width: 400px;
+	padding: .5em;
+	outline: 2px dashed #aaa;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.fade-out {
+	outline: 2px dashed #aaa;
+	width: 500px;
+	padding: .5em;
+	max-height: 300px;
+	overflow: hidden;
+	background-image: linear-gradient( to bottom, black 60%, rgba(0, 0, 0, .1));
+	-webkit-background-clip: text;
+	background-clip: text;
+	position: relative;
+}
+
+.fade-out h2 {
+	margin-top: 0;
+}
+
+.text-fade-out {
+	color: transparent;
+}
+
+.lees-alles {
+	position: absolute;
+	bottom: 0;
+	color: white;
+	padding: 8px;
+	background-color: black;
+	text-decoration: none;
+}
+
+.resize {
+	margin: 50px 0;
+}
+
+.resize>section {
+	overflow: auto;
+	width: 400px;
+	height: 150px;
+	margin: 8px 0;
+	padding: 8px;
+	border: 2px solid grey;
+	resize: vertical;
+}
+
+section>h2 {
+	font-size: 1.2em;
+}
+
+.pseudotekst {
+	margin: 8px 0;
+	width: 80%;
+	border: 6px solid grey;
+	border-radius: 6px;
+}
+
+.clip-outer {
+	position: relative;
+}
+.clip-inner { /* extra div om de oorspronkelijke afbeelding te laten zien */
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.clip-inner > img {
+	opacity: .2;
+}
+.clip-outer > img {
+	clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.clip-url svg {
+	width: 0;
+	height: 0;
+}
+.clip-url > img {
+	clip-path: url('#clip-circle');
+}
+.clip-inset > img {
+	clip-path: inset(0 100px round 20px);
+}
+
+

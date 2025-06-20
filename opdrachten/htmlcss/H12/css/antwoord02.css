@@ -1,0 +1,63 @@
+body {
+
+      background-color: #FFC;
+
+  }
+
+div.container {
+
+    width:600px;
+
+    border: 0.25rem solid blue;
+
+    display: flow-root;
+
+}
+
+.blok {
+
+    width: 200px;
+
+    height: 200px;
+
+    margin: 30px;
+
+    padding: 0.5rem;
+
+    border: 0.15rem silver ridge;
+
+    float: left;
+
+}
+
+.blok1 {
+
+    background: url(../img/aas.jpg) center top/20% no-repeat, url(../img/aas.jpg) center bottom/20% no-repeat, url(../img/azen.jpg) center left/180% no-repeat black;
+
+}
+
+.blok2 {
+
+    background-image: url(../img/aas.jpg);
+
+    background-size: 25%;
+
+    background-repeat: repeat;
+
+}
+
+.blok3 {
+
+    background-image: linear-gradient(to bottom, red 15px, blue 15px);
+
+    background-size: 1px 30px;
+
+    background-repeat: repeat;
+
+}
+
+.blok4 {
+
+    background-image: radial-gradient(circle, white 50px, blue);
+
+}

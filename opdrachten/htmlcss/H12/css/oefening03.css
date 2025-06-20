@@ -1,0 +1,12 @@
+body {
+    background-color: #FFC;
+}
+
+div {
+    width:200px;
+    height: 200px;
+    border: 20px solid transparent;
+    border-image: url('../img/rand.jpg') 30 round;
+    box-sizing: border-box;
+    margin: 50px auto;
+}

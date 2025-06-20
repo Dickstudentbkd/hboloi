@@ -1,0 +1,57 @@
+/* CSS Document */
+
+body {
+
+background-color: #FFC;
+
+}
+
+div.container {
+
+width:600px;
+
+border: 0.25rem solid blue;
+
+display: flow-root
+
+}
+
+.blok {
+
+width: 200px;
+
+height: 200px;
+
+margin: 30px;
+
+padding: 0.5rem;
+
+border: 0.15rem silver ridge;
+
+float: left;
+
+}
+
+.blok1 {
+
+background-color: HSL(240,100%,50%);
+
+}
+
+.blok2 {
+
+background-color: HSLA(240,100%,70%,0.6);
+
+}
+
+.blok3 {
+
+background-color: RGBA(0,15,230,0.6);
+
+}
+
+.blok4 {
+
+background-color: RGB(0,0,255);
+
+}

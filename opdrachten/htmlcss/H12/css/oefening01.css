@@ -1,0 +1,27 @@
+body {
+    /*display: flex;*/
+}
+.firstrow {
+    display: flex;
+}
+.secondrow {
+    display: flex;
+}
+div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+.rgb_lb {
+    background-color: rgb(0, 0, 200);
+}
+.hsl_ro {
+    background-color: hsl(240, 100%, 39%)
+}
+.hsla_lo {
+    /*background-color: rgb(255, 165, 0);*/
+    background-color: hsla(39, 100%, 50%, 0.5);
+}
+.rgba_rb {
+    background-color: rgba(255, 166, 0, 0.5);
+}

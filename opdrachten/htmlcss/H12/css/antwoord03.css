@@ -1,0 +1,21 @@
+  body {
+      background-color: #FFC;
+  }
+
+div.container {
+    width:600px;
+}
+
+.blok {
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    float: left;
+    background-image: radial-gradient(circle, white 5px, blue);
+    border-image-source: url('../img/rand.jpg');
+    border-width: 50px;
+    border-style: double;
+    border-image-slice: 20%;
+    border-image-width: 50px;
+    border-image-repeat: round stretch;
+}

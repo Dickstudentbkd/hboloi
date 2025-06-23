@@ -1,0 +1,51 @@
+body {
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #2ecc71;
+    text-transform: capitalize;
+    /*overflow: hidden;*/
+    align-items: center;
+    justify-content: space-between;
+    /*text-align: center;*/
+    width: 100%;
+}
+/*.navbar li:not(:last-child)::after {
+    position: absolute;
+    right: -10.1rem;
+    color: #000;
+}*/
+.navbar li {
+    text-transform: uppercase;
+    text-align: center;
+    float: left;
+}
+.navbar li a {
+    display: block;
+    color: gray;
+    padding: 14px 16px;
+    text-decoration: none;
+    /*align-items: center;*/
+}
+.navbar li a:hover {
+    background-color: #4CAF50;
+}
+.seperator {
+    color: gray;
+    pointer-events: none;
+    padding: 0px 0px;
+    margin: 0;
+}
+.nav-bar li:not(:first-child)::before {
+    content: "|";
+    margin: 0 1rem;
+    color: red;
+}
+.tekst {
+    list-style-image: url('../img/klaver.png');
+}

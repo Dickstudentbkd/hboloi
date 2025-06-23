@@ -1,0 +1,45 @@
+ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(200, 100%, 50%);
+}
+a {
+    display: block;
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+    transition: all 2s ease-in-out 50ms;
+}
+a:hover {
+    background-color: white;
+    color: hsl(200, 100%, 50%);
+    border: 2px solid hsl(200, 100%, 50%);
+} .animate-nieuws:hover {
+      animation-name: kleur;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: initial;
+      animation-direction: alternate;
+      animation-fill-mode: initial;
+      animation-play-state: initial;
+  }
+@keyframes kleur {
+    0% {
+        background-color: hsl(150, 50%, 100%);
+    }
+    25% {
+        background-color: hsl(150, 50%, 75%);
+    }
+    50% {
+        background-color: hsl(150, 50%, 50%);
+    }
+    75% {
+        background-color: hsl(150, 50%, 25%);
+    }
+    100% {
+        background-color: hsl(150, 50%, 0%);
+    }
+}

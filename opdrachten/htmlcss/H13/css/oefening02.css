@@ -1,0 +1,55 @@
+:root {
+    --fontsize: 10px;
+}
+div {
+    border: blue;
+    background-color: lightblue;
+    text-align: center;
+
+}
+.animated {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    animation-name: kleurwiel;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-delay: initial;
+    animation-direction: alternate;
+
+}
+@keyframes kleurwiel {
+    0% {
+        font-size: calc(var(--fontsize)*1);
+    }
+    20% {
+        font-size: calc(var(--fontsize)*1.5);
+    }
+    40% {
+        font-size: calc(var(--fontsize)*2);
+       }
+    50% {
+        font-size: calc(var(--fontsize)*2.5);
+        transform: translateY(200px);
+    }
+    60% {
+        font-size: calc(var(--fontsize)*3);
+        border-radius: 50%;
+    }
+    70% {
+        font-size: calc(var(--fontsize)*3.5);
+        border-radius: 50%;
+    }
+    80% {
+        font-size: calc(var(--fontsize)*4);
+        border-radius: 50%;
+    }
+    90% {
+        font-size: calc(var(--fontsize)*4.5);
+        border-radius: 50%;
+    }
+    100% {
+        font-size: calc(var(--fontsize)*5);
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,14 @@
+    /* CSS Document */
+body {
+    background-color: hsl(180, 50%, 50%);
+}
+
+header {
+    --p-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
+p {
+    text-shadow: var(--p-shadow);
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 100%);
+}

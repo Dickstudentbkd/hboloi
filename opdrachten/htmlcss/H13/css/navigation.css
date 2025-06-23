@@ -8,6 +8,7 @@ ul {
     padding: 0;
     transform: translateX(-110px);
     transition: transform 250ms ease-in-out;
+    background-color: paleturquoise;
 }
 #menu-toggle {
     display: none;
@@ -23,15 +24,27 @@ a:any-link {
     padding: 0.75em 0.25em;
     text-decoration: none;
 }
-li {
-    list-style-type: square;
-}
 @media screen and (min-width: 768px) {
     :is(input:checked ~ ul, ul) {
         display: flex;
+        flex-flow:  wrap-reverse;
         transform: translateX(0);
     }
     [for="menu-toggle"] {
         display: none;
     }
+}
+li:nth-child(1):hover {
+    transform: scale(1.2);
+    color: blue;
+    background-color: white;
+}
+li:nth-child(2):hover {
+    color: red;
+}
+li:nth-child(3):hover {
+    transform: skew(10deg, 10deg);
+}
+li:nth-child(4):hover {
+    transform: rotate(10deg);
 }

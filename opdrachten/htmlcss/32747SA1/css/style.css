@@ -1,0 +1,95 @@
+@charset "UTF-8";
+:root {
+    --primary0: rgba(138,160,213,1); /* Dark */
+    --primary1: rgba(161,181,226,1);
+    --primary2: rgba(185,201,237,1);
+    --primary3: rgba(208,219,245,1);
+    --primary4: rgba(229,236,251,0.5); /* Light */
+    --hover: rgba(255, 111, 78, 0.2);
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary4);
+}
+.grid {
+    min-height: 98vh;
+    display: grid;
+    grid-auto-columns: 20px 1fr 1fr 1fr 20px;
+    grid-template-rows: 50px 100px 1fr 1fr 2fr 50px;
+    grid-template-areas:
+        ". logo nav nav ."
+        ". foto foto foto ."
+        ". content content content ."
+        ". fotos fotos fotos . "
+        ". foto_content foto_content foto_content ."
+        ". footer footer footer .";
+    grid-gap: 1px;
+}
+.grid > * {
+    border: 1px solid black;
+}
+nav {
+    grid-area: nav;
+    background-color: var(--primary0);
+    justify-content: end;
+    justify-items: end;
+}
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+    justify-content: end;
+    justify-items: end;
+}
+nav > ul > li {
+    padding: 10px;
+    display: inline-block;
+    align-items: end;
+    align-content: end;
+}
+nav > ul > li:not(:first-child)::before {
+    /*content: "|";*/
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+}
+nav > ul > li > a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+nav > li > ul {
+    display: none;
+    margin-top: 5px;
+    list-style-type: none;
+    background-color: var(--primary0);
+}
+.logo {
+    grid-area: logo;
+    /*justify-self: start;*/
+    background-color: var(--primary0);
+    img {
+        height: 50px;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding-left: 30px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+
+    }
+}
+/* Change the background color when mouse over items */
+nav li:hover {
+    background-color: var(--primary4);
+}
+.foto {
+
+}

@@ -1,0 +1,63 @@
+.grid {
+    min-height: 98vh;
+    display: grid;
+    grid-auto-columns: 10px 1fr 1fr 1fr 10px;
+    grid-template-rows: 50px 100px 1fr 1fr 2fr 50px;
+    grid-template-areas:
+        ". nav nav nav ."
+        ". foto foto foto ."
+        ". content content content ."
+        ". fotos fotos fotos . "
+        ". foto_content foto_content foto_content ."
+        ". footer footer footer .";
+    grid-gap: 1px;
+}
+.grid > * {
+    border: 1px solid black;
+}
+nav {
+    grid-area: nav;
+}
+nav > ul {
+    /*display: grid;*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #6ee7b7;
+    height: 60px;
+    /*grid-area: nav;*/
+}
+
+nav > ul > li {
+    padding: 0 1rem;
+    position: relative;
+}
+
+nav > ul > li:not(:first-child)::before {
+    content: "|";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 1rem;
+}
+nav > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+article {
+    grid-area: content;
+}
+.foto {
+    grid-area: foto;
+}
+.fotos {
+    grid-area: fotos;
+}
+footer {
+    grid-area: footer;
+}
+.foto_content {
+    grid-area: foto_content;
+}

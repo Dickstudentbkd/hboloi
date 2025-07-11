@@ -12,73 +12,23 @@ body {
     padding: 0;
     background-color: var(--primary4);
 }
-
-@media screen  and (min-width: 1024px){
-    .grid {
-        min-height: 98vh;
-        display: grid;
-        grid-auto-columns: 20px 1fr 1fr 1fr 20px;
-        grid-template-rows: 50px 100px 1fr 1fr 2fr 50px;
-        grid-template-areas:
+.grid  {
+    min-height: 98vh;
+    display: grid;
+    grid-auto-columns: 20px 1fr 1fr 1fr 20px;
+    grid-template-rows: 50px 100px 1fr 1fr 2fr 50px;
+    grid-template-areas:
         ". logo nav nav ."
         ". foto foto foto ."
         ". content content content ."
         ". fotos fotos fotos . "
         ". foto_content foto_content foto_content ."
         ". footer footer footer .";
-        grid-gap: 1px;
-    }
-} /* end of min-width: 1024px */
-@media screen  and (min-width: 320px) {
-    .grid {
-        min-height: 98vh;
-        display: grid;
-        grid-auto-columns: 2px 1fr 2px;
-        grid-template-rows: 50px 100px 1fr 1fr 2fr 50px;
-        grid-template-areas:
-        ". logo ."
-        ". nav ."
-        ". foto ."
-        ". content ."
-        ". content ."
-        ". fotos . "
-        ". fotos . "
-        ". fotos . "
-        ". fotos . "
-        ". fotos . "
-        ". foto_content ."
-        ". foto_content ."
-        ". foto_content ."
-        ". footer .";
-        grid-gap: 1px;
-    }
-    .grid > * {
-        border: 1px solid black;
-    }
-    nav {
-        grid-area: nav;
-        background-color: var(--primary0);
-        justify-content: end;
-        justify-items: end;
-    }
-    img {
-        height: 100%;
-        display: inline-block;
-        justify-content: center;
-        align-items: center;
-        padding-top: 2px;
-        padding-bottom: 2px;
-    }
-} /* End of min-width: 320px */
+    grid-gap: 1px;
+}
 .grid > * {
     border: 1px solid black;
 }
-.logo {
-    grid-area: logo;
-    /*justify-self: start;*/
-    background-color: var(--primary0);
-}
-/* Change the background color when mouse over items */
 nav {
     grid-area: nav;
     background-color: var(--primary0);
@@ -128,6 +78,12 @@ nav > li > ul {
     list-style-type: none;
     background-color: var(--primary0);
 }
+.logo {
+    grid-area: logo;
+    /*justify-self: start;*/
+    background-color: var(--primary0);
+}
+/* Change the background color when mouse over items */
 nav li:hover {
     background-color: var(--primary4);
 }

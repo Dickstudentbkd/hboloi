@@ -1,5 +1,8 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 :root {
     --primary0: rgba(138,160,213,1); /* Dark */
     --primary1: rgba(161,181,226,1);
@@ -9,9 +12,14 @@
     --hover: rgba(255, 111, 78, 0.2);
     --backgroundcolor: rgba(236,236,251,0.2);
 }
+html, body {
+    overflow-x: hidden; /* tijdelijk om scroll te voorkomen */
+}
+
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: var(--primary4);
     font-family: "Lora", serif;
     font-weight: 400;
@@ -45,6 +53,7 @@ h1 h2 h3 h4 h5 a {
         font-family: "Open Sans", sans-serif;
         font-weight: 500;
         font-size: 1.2rem;
+        overflow: hidden;
     }
     nav > ul {
         display: flex;
@@ -56,7 +65,19 @@ h1 h2 h3 h4 h5 a {
         justify-content: end;
         justify-items: end;
     }
+    .logo::after {
+        content: 'Vogelen';
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        color: white;
+        padding: 2px 6px;
+        font-size: 1rem;
+        font-weight: 800;
+        transform: rotate(-20deg);
+    }
     .content {
+        grid-area: content;
         display: flex;
         flex-direction: row;
     }
@@ -90,13 +111,34 @@ h1 h2 h3 h4 h5 a {
     .fotos > img hover {
 
     }
+    /*3 foto's */
+    .foto_container {
+        grid-area: foto_content;
+        background-color: var(--backgroundcolor);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .foto_item_image  img {
+        max-width: 100%;
+        height: auto;
+        justify-content: space-between;
+        padding: 10px 10px 0px;
+        gap: 1rem;
+        align-items: center;
+    }
+    .foto_item_header {
+        padding: 0px 10px;
+    }
 } /* end of min-width: 1024px */
 @media only screen  and (max-width: 768px) {
     .grid {
+        max-width: 768px;
         min-height: 98vh;
         display: grid;
-        grid-auto-columns: 2px 1fr 2px;
-        /*grid-template-rows: 50px 200px 1fr 1fr 2fr 50px;*/
+        margin: 0 auto;
+        /*grid-auto-columns: 1px 1fr 1px;*/
+        grid-template-columns: 1px 1fr 1px;
         grid-template-rows: 50px auto;
         grid-template-areas:
         ". logo ."
@@ -114,6 +156,7 @@ h1 h2 h3 h4 h5 a {
         ". foto_content ."
         ". footer .";
         grid-gap: 1px;
+        padding: 0;
     }
     nav {
         grid-area: nav;
@@ -134,26 +177,61 @@ h1 h2 h3 h4 h5 a {
         justify-content: left;
         justify-items: left;
     }
+    .logo::after {
+        content: 'Vogelen';
+        position: absolute;
+        top: 20px;
+        left: 0;
+        color: white;
+        padding: 2px 6px;
+        font-size: 0.8rem;
+        font-weight: 800;
+        transform: rotate(-20deg);
+    }
     .content {
+        grid-area: content;
         display: flex;
         flex-direction: column;
+        width: auto;
     }
     h2 {
         margin-top: 5px;
     }
     .block_content {
+        max-width: 98%;
         padding-left: 10px;
-        padding-right: 10px;
-        margin: 2px 5px;
+        padding-right: 2px;
+        margin: 2px 2px;
         background-color: var(--primary3);
         box-shadow: 2px 2px;
         --box-shadow-color: var(--primary4);
-        max-height: 50px;
     }
     .fotos > img {
+        max-width: 98%;
         width: 100%;
+        padding-left: 10px;
+        padding-right: 2px;
         height: auto;
 
+    }
+    .foto_container {
+        grid-area: foto_content;
+        background-color: var(--backgroundcolor);
+        display: flex;
+        flex-direction: column;
+    }
+    .foto_item_image  img {
+        max-width: 100%;
+        height: auto;
+        padding: 10px 10px 0px;
+        gap: 1rem;
+        align-items: center;
+    }
+    .foto_item_header {
+        padding: 0px 10px;
+    }
+    footer {
+        font-size: 0.8rem;
     }
 }   /* End of min-width: 320px */
 .grid > * {
@@ -167,15 +245,12 @@ img {
     padding-top: 2px;
     padding-bottom: 2px;
 }
-
+/*Create a style for te first level items */
 nav > ul > li {
     padding: 10px;
-    display: inline-block;
-/*    align-items: end;
-    align-content: end;*/
+    display: block;
 }
 nav > ul > li:not(:first-child)::before {
-    /*content: "|";*/
     position: absolute;
     left: 0;
     top: 50%;
@@ -183,21 +258,32 @@ nav > ul > li:not(:first-child)::before {
     font-size: 1rem;
 }
 nav > ul > li > a {
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 0.5em;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
 }
-nav > li > ul {
+nav li > ul {
     display: none;
     margin-top: 5px;
     list-style-type: none;
     background-color: var(--primary0);
 }
+/*Create a style for the second level items*/
+nav li > ul li a {
+    color: red;
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 2em;
+    text-decoration: none;
+}
 .logo {
     grid-area: logo;
-    /*justify-self: start;*/
     background-color: var(--primary0);
 }
+
 /* Change the background color when mouse over items */
 nav li:hover {
     background-color: var(--primary4);
@@ -212,20 +298,32 @@ header img {
     object-fit: cover;
     display: block;
 }
-.content {
-    grid-area: content;
-    background-color: var(--backgroundcolor);
-}
+/*.content {*/
+/*    grid-area: content;*/
+/*    background-color: var(--backgroundcolor);*/
+/*}*/
 .fotos {
     grid-area: fotos;
     background-color: var(--backgroundcolor);
 }
-
 .foto_content {
-    grid-area: foto_content;
-    background-color: var(--backgroundcolor);
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
 }
+
 footer {
     grid-area: footer;
-    background-color: var(--backgroundcolor);
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    vertical-align: top;
 }
+.active {
+    background-color: var(--primary4);
+}
+

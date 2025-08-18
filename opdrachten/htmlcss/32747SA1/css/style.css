@@ -162,7 +162,7 @@ h1 h2 h3 h4 h5 a {
         flex-direction: row;
     }
     .logo::after {
-        content: 'Vogelen';
+        content: 'Vogelen!';
         position: absolute;
         top: 20px;
         left: 15px;
@@ -220,7 +220,16 @@ h1 h2 h3 h4 h5 a {
     .foto_container > article:nth-child(-n+3) {
         display: block;
     }
-    .foto_item_image  img {
+    .foto_item_image  img  {
+        display: flex;
+        max-width: 100%;
+        height: auto;
+        justify-content: space-between;
+        padding: 10px 10px 0px;
+        gap: 1rem;
+        align-items: center;
+    }
+    .foto_item_image  video {
         display: flex;
         max-width: 100%;
         height: auto;
@@ -301,9 +310,7 @@ h1 h2 h3 h4 h5 a {
     .fotos {
         display: block;
     }
-    /*.fotos > * {*/
-    /*    display: flex;*/
-    /*}*/
+
     .fotos > img {
         display: inline-block;
         max-width: 98%;
@@ -318,6 +325,10 @@ h1 h2 h3 h4 h5 a {
         display: flex;
         flex-direction: column;
     }
+    .foto_container > article {
+        display: block;
+    }
+
     .foto_item_image  img {
         max-width: 100%;
         height: auto;
@@ -350,8 +361,6 @@ nav {
     background-color: var(--primary0);
     font-family: "Open Sans", sans-serif;
     font-weight: 500;
-    /*justify-content: end;*/
-    /*justify-items: end;*/
     text-transform: uppercase;
 }
 nav ul {
@@ -362,7 +371,7 @@ nav ul {
 }
 nav > ul > li {
     position: relative;   /* Belangrijk: referentie voor submenu */
-    padding: 5px;
+    padding: 1px;
     margin: 0;
     list-style-type: none;
     transition: all 0.2s;

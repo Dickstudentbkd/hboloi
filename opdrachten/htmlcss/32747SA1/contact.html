@@ -10,10 +10,9 @@
 <div class="grid">
     <div class="logo">
         <img src="img/logo.png" alt="logo hobby vogelen">
-        <!--        <div class="text_logo">Vogelen</div>-->
     </div>
     <nav>
-        <ul class="navbar">
+        <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="vogelen.html">Vogelen</a></li>
             <li><a href="fotografie.html">Fotografie</a></li>
@@ -31,7 +30,30 @@
         <img src="img/banner.JPG">
     </header>
     <!--Hier  rest van pagina!-->
-
+    <section class="content">
+        <h1>Contactformulier</h1>
+        <h2>Heb je een vraag, dan kun je die kwijt via onderstaand formulier.
+            Ook tips zijn van harte welkom!</h2>
+        <p>Om eventueel een reactie te kunnen geven hebben we wel enkele persoonsgegevens
+            van je nodig.</p>
+    </section>
+    <section>
+        <form autocomplete="on">
+            <p>Selecteer je keuze</p>
+            <input type="radio" id="vraag" name="choice" value="Vraag">
+            <label for="vraag">Vraag</label>
+            <input type="radio" id="suggestie" name="choice" value="Suggestie">
+            <label for="suggestie">Suggestie</label>
+            <input type="radio" id="opmerking" name="choice" value="Opmerking">
+            <label for="opmerking">Opmerking</label>
+            <p>Je gegevens</p>
+            <label for="fname">Voornaam</label><br>
+            <input type="text" id="fname" value="" required><br><br>
+            <label for="email">E-mail</label><br>
+            <input type="email" id="email" name="email" value="" placeholder="E-mailadres...." autocomplete="off"><br><br>
+            <input type="submit" value="Verzenden">
+        </form>
+    </section>
 </div>
 </body>
 </html>

@@ -46,24 +46,14 @@ h1 h2 h3 h4 h5 a {
         grid-gap: 1px;
     }
     nav {
-        grid-area: nav;
-        background-color: var(--primary0);
+        font-size: 1.2rem;
         justify-content: end;
         justify-items: end;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 500;
-        font-size: 1.2rem;
-        overflow: hidden;
     }
-    nav > ul {
+
+    nav ul {
         display: flex;
         flex-direction: row;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        list-style: none;
-        justify-content: end;
-        justify-items: end;
     }
     .logo::after {
         content: 'Vogelen';
@@ -159,23 +149,13 @@ h1 h2 h3 h4 h5 a {
         padding: 0;
     }
     nav {
-        grid-area: nav;
-        background-color: var(--primary0);
-        justify-content: left;
-        justify-items: left;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 500;
         font-size: 0.8rem;
-    }
-    nav > ul {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        list-style: none;
         justify-content: left;
         justify-items: left;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column; /* verticaal */
     }
     .logo::after {
         content: 'Vogelen';
@@ -245,49 +225,81 @@ img {
     padding-top: 2px;
     padding-bottom: 2px;
 }
-/*Create a style for te first level items */
+
+/* Style nav-bar */
+nav {
+    grid-area: nav;
+    background-color: var(--primary0);
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    /*justify-content: end;*/
+    /*justify-items: end;*/
+    text-transform: uppercase;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+}
 nav > ul > li {
-    padding: 10px;
-    display: block;
+    position: relative;   /* Belangrijk: referentie voor submenu */
+    padding: 5px;
+    margin: 0;
+    list-style-type: none;
+    transition: all 0.2s;
 }
-nav > ul > li:not(:first-child)::before {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1rem;
-}
+
 nav > ul > li > a {
     display: block;
     line-height: 2em;
-    padding: 0.5em 0.5em;
+    padding: 0.5em 0.8em;
     text-decoration: none;
     color: white;
-    text-transform: uppercase;
 }
+
+/* Hover effect main items */
+nav > ul > li:hover {
+    background-color: var(--primary4);
+}
+/* SUBMENU                 */
 nav li > ul {
     display: none;
-    margin-top: 5px;
-    list-style-type: none;
-    background-color: var(--primary0);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary2);
+    padding: 0;
+    margin-top: 1px;
+    list-style: none;
+    min-width: 180px;
+    height: 4em;
+    z-index: 1000;
 }
-/*Create a style for the second level items*/
-nav li > ul li a {
-    color: red;
+/* Show submenu by hover */
+nav li:hover > ul {
     display: block;
-    line-height: 2em;
-    padding: 0.5em 2em;
-    text-decoration: none;
 }
+/* Submenu items */
+nav li > ul li {
+    display: block;
+}
+nav li > ul li a {
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #0000ff;
+}
+nav li > ul li a:hover {
+    background-color: var(--primary4);
+}
+
 .logo {
     grid-area: logo;
     background-color: var(--primary0);
 }
 
-/* Change the background color when mouse over items */
-nav li:hover {
-    background-color: var(--primary4);
-}
 header {
     grid-area: foto;
     background-color: lightyellow;
@@ -298,10 +310,7 @@ header img {
     object-fit: cover;
     display: block;
 }
-/*.content {*/
-/*    grid-area: content;*/
-/*    background-color: var(--backgroundcolor);*/
-/*}*/
+
 .fotos {
     grid-area: fotos;
     background-color: var(--backgroundcolor);

@@ -1,0 +1,91 @@
+.grid {
+    max-width: 768px;
+    min-height: 98vh;
+    display: grid;
+    margin: 0 auto;
+    /*grid-auto-columns: 1px 1fr 1px;*/
+    grid-template-columns: 1px 1fr 1px;
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+        ". logo ."
+        ". nav ."
+        ". foto ."
+        ". content ."
+        ". content ."
+        ". fotos . "
+        ". fotos . "
+        ". fotos . "
+        ". fotos . "
+        ". fotos . "
+        ". foto_content ."
+        ". foto_content ."
+        ". foto_content ."
+        ". footer .";
+    grid-gap: 1px;
+    padding: 0;
+}
+nav {
+    grid-area: nav;
+    background-color: var(--primary0);
+    justify-content: left;
+    justify-items: left;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+    justify-content: left;
+    justify-items: left;
+}
+
+/*Create a style for te first level items */
+nav ul > li {
+    padding: 5px;
+    margin: 0;
+    display: inline-block;
+    list-style-type: none;
+    transition: all 0.2s;
+}
+
+nav > ul > li > a {
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+    color: white;
+}
+
+/*Create a style for the second level items*/
+nav li > ul {
+    display: none;
+    margin-top: 5px;
+    background-color: var(--primary3);
+}
+nav li > ul li {
+    display: inline-block;
+    justify-content: left;
+    justify-items: left;
+}
+nav li > ul li a {
+    color: red;
+    display: inline-block;
+    line-height: 2em;
+    padding: 0.2em 0.2em;
+    text-decoration: none;
+    justify-content: left;
+    justify-items: left;
+}
+/* display the submenu on mouse over main menu item*/
+nav li:hover {
+    background-color: var(--hover);
+}
+nav li:hover > ul{
+    position:absolute;
+    display : inline-block;
+}

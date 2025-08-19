@@ -23,7 +23,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--primary4);
+    background-color: var(--backgroundcolor);
     font-family: "Lora", serif;
     font-weight: 400;
     font-style: normal;
@@ -207,7 +207,6 @@ h1 h2 h3 h4 h5 a {
         flex-direction: column;
     }
     h1 {
-        color: var(--primary0);
         text-transform: uppercase;
         text-shadow: .2em .2em .5em var(--primary1);
     }
@@ -225,13 +224,49 @@ h1 h2 h3 h4 h5 a {
         --box-shadow-color: var(--primary4);
     }
     form {
-        width: 100%;
-        adding-left: 10px;
-        padding-right: 5px;
+        width: 97%;
+        padding: 5px;
         margin: 15px 10px;
         border: 1px solid black;
-        background-color: var(--primary3);
+        background-color: var(--backgroundcolor);
     }
+    form p {
+        font-weight: bold;
+    }
+    form input[type=text], input[type=email], textarea  {
+        width: 80%;
+        padding: 12px;
+        border: 1px solid var(--primary4);
+    }
+    input[type=submit] {
+        background-color: var(--primary0);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: left;
+    }
+    input[type=submit]:hover {
+        background-color: var(--hover);
+    }
+    form label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+    .field_group:has(input[required]) label::after {
+        content: " *";
+        color: red;
+    }
+    .form {
+        color: var(--primary0);
+    }
+   .form textarea {
+        height: 150px;
+    }
+   .form textarea input {
+       color: black;
+   }
     .fotos {
         display: flex;
         align-items: center;

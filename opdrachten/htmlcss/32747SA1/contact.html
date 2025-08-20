@@ -53,12 +53,9 @@
         <p>Om eventueel een reactie te kunnen geven, hebben we wel enkele persoonsgegevens
             van je nodig.</p>
 
-
-
-
         <form action="https://jkorpela.fi/cgi-bin/echo.cgi"  autocomplete="on">
             <p>Selecteer je keuze</p>
-            <div class="field_group">
+            <div class="field_group field_group_radio">
                 <input type="radio" id="vraag" name="choice" value="Vraag">
                 <label for="vraag">Vraag</label>
                 <input type="radio" id="suggestie" name="choice" value="Suggestie">
@@ -67,7 +64,7 @@
                 <label for="opmerking">Opmerking</label>
             </div>
             <div class="field_group">
-                <textarea id="memo" placeholder="Uw bericht..."></textarea>
+                <textarea id="memo" name="memo" placeholder="Uw bericht..."></textarea>
                 <p>Je gegevens</p>
             </div>
             <div class="field_group">

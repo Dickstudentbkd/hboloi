@@ -5,6 +5,10 @@
     <title>Vogelen en fotografie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkCW6EbzMoH-onrcG1A1zv9yz49nNO6Z0&callback=console.debug&libraries=maps,marker&v=beta"
+            defer
+    >
+    </script>
 </head>
 <body>
 <div class="contact_grid">
@@ -30,33 +34,46 @@
         <img src="img/banner.JPG">
     </header>
     <!--Hier  rest van pagina!-->
+    <section class="map">
+        <gmp-map
+                center="52.01171171766284, 4.710562139947914"
+                zoom="15"
+                map-id="DEMO_MAP_ID"
+        >
+            <gmp-advanced-marker
+                    position="52.01171171766284, 4.710562139947914"
+                    title="Gouda- stadhuis!"
+            ></gmp-advanced-marker>
+        </gmp-map>
+    </section>
     <section class="form">
         <h1>Contactformulier</h1>
-        <br>
         <h2>Heb je een vraag, dan kun je die kwijt via onderstaand formulier.
             Ook tips zijn van harte welkom!</h2>
-        <p>Om eventueel een reactie te kunnen geven hebben we wel enkele persoonsgegevens
+        <p>Om eventueel een reactie te kunnen geven, hebben we wel enkele persoonsgegevens
             van je nodig.</p>
-        <form autocomplete="on">
+
+
+
+
+        <form action="https://jkorpela.fi/cgi-bin/echo.cgi"  autocomplete="on">
             <p>Selecteer je keuze</p>
-            <input type="radio" id="vraag" name="choice" value="Vraag">
-            <label for="vraag">Vraag</label>
-            <input type="radio" id="suggestie" name="choice" value="Suggestie">
-            <label for="suggestie">Suggestie</label>
-            <input type="radio" id="opmerking" name="choice" value="Opmerking">
-            <label for="opmerking">Opmerking</label>
-            <br><br>
             <div class="field_group">
-                <textarea id="memo" placeholder="Ik heb de volgende vraag, suggestie of opmerking..."></textarea>
-                <p>Je gegevens</p>
+                <input type="radio" id="vraag" name="choice" value="Vraag">
+                <label for="vraag">Vraag</label>
+                <input type="radio" id="suggestie" name="choice" value="Suggestie">
+                <label for="suggestie">Suggestie</label>
+                <input type="radio" id="opmerking" name="choice" value="Opmerking">
+                <label for="opmerking">Opmerking</label>
             </div>
             <div class="field_group">
-
+                <textarea id="memo" placeholder="Uw bericht..."></textarea>
+                <p>Je gegevens</p>
             </div>
             <div class="field_group">
                 <label for="name">Naam</label>
                 <br>
-                <input type="text" name="name" id="name" required><br><br>
+                <input type="text" name="name" id="name" placeholder="Geef hier uw naam..." required>
             </div>
             <div class="field_group">
                 <label for="email">E-mail</label>
@@ -68,8 +85,6 @@
                 <br>
                 <input type="text" name="telnummer" id="telnummer">
             </div>
-
-            <br><br>
             <input type="submit" value="Verzenden">
         </form>
     </section>

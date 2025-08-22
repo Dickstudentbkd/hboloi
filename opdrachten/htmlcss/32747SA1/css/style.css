@@ -163,7 +163,16 @@ h1 h2 h3 h4 h5 a {
         gap: 1rem;
         align-items: center;
     }
-    .foto_item_header {
+    .foto_item_image  video {
+        display: flex;
+        max-width: 100%;
+        height: auto;
+        justify-content: space-between;
+        padding: 10px 10px 0px;
+        gap: 1rem;
+        align-items: center;
+    }
+        .foto_item_header {
         padding: 0px 10px;
     }
 } /* end of (min-width: 768px) and (max-width: 1023px)*/
@@ -311,7 +320,7 @@ h1 h2 h3 h4 h5 a {
         display: grid;
         margin: 0 auto;
         grid-template-columns: 1fr;
-        grid-template-rows: 50px auto 80px auto auto 50px;
+        grid-template-rows: 50px auto 80px auto auto auto 50px;
         grid-template-areas:
         "logo"
         "nav"
@@ -362,7 +371,7 @@ h1 h2 h3 h4 h5 a {
         grid-area: content;
         display: flex;
         flex-direction: column;
-        max-width: 80%;
+        max-width: 100%;
     }
     .map {
         grid-area: map;
@@ -406,14 +415,12 @@ h1 h2 h3 h4 h5 a {
         --box-shadow-color: var(--primary4);
     }
     .fotos {
-        /*display: block;*/
-/*        flex-direction: column;*/
+        display: block;
     }
-
     .fotos > img {
-        /*display: inline-block;*/
+        display: block;
         max-width: 98%;
-        width: 100%;
+        width: 98%;
         padding-left: 10px;
         padding-right: 2px;
         height: auto;
@@ -435,13 +442,20 @@ h1 h2 h3 h4 h5 a {
         gap: 1rem;
         align-items: center;
     }
+    .foto_item_image  video {
+        max-width: 100%;
+        height: auto;
+        padding: 10px 10px 0px;
+        gap: 1rem;
+        align-items: center;
+    }
     .foto_item_header {
         padding: 0px 10px;
     }
     footer {
         font-size: 0.8rem;
     }
-}   /* End of min-width: 320px */
+}   /* End of max-width: 767px */
 .grid > * {
     border: 1px solid black;
 }
@@ -528,7 +542,7 @@ header {
     grid-area: foto;
     display: flex;
     justify-content: center;
-    background-color: red;
+    background-color: var(--backgroundcolor);
     align-content: center;
     align-items: center;
 }

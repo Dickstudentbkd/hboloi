@@ -70,6 +70,18 @@ h1 h2 h3 h4 h5 a {
         ". footer footer .";
         grid-gap: 1px;
     }
+    .content_grid {
+        min-height: 98vh;
+        display: grid;
+        grid-auto-columns: 20px 60px 1fr 20px;
+        grid-template-rows: 50px 100px auto 50px;
+        grid-template-areas:
+        ". logo nav  ."
+        ". foto foto ."
+        ". content content ."
+        ". footer footer .";
+        grid-gap: 1px;
+    }
     nav {
         font-size: 1.2rem;
         justify-content: end;
@@ -95,6 +107,10 @@ h1 h2 h3 h4 h5 a {
         display: flex;
         flex-direction: row;
     }
+    .content_uitleg {
+        grid-area: content;
+        display: block;
+    }
     .map {
         grid-area: map;
         display: flex;
@@ -115,6 +131,13 @@ h1 h2 h3 h4 h5 a {
         margin: 0;
         padding-top: 5px;
         font-size: 1.1rem;
+    }
+    h3 {
+        margin: 0;
+        padding-top: 5px;
+        padding-left: 5px;
+        font-size: 1rem;
+
     }
     .block_content {
         width:50%;
@@ -204,6 +227,18 @@ h1 h2 h3 h4 h5 a {
         ". footer footer .";
         grid-gap: 1px;
     }
+    .content_grid {
+        min-height: 98vh;
+        display: grid;
+        grid-auto-columns: 20px 60px 1fr 20px;
+        grid-template-rows: 50px 100px auto 50px;
+        grid-template-areas:
+        ". logo nav  ."
+        ". foto foto ."
+        ". content content ."
+        ". footer footer .";
+        grid-gap: 1px;
+    }
     nav {
         font-size: 1.2rem;
         justify-content: end;
@@ -228,6 +263,10 @@ h1 h2 h3 h4 h5 a {
         grid-area: content;
         display: flex;
         flex-direction: row;
+    }
+    .content_uitleg {
+        grid-area: content;
+        display: block;
     }
     .map {
         grid-area: map;
@@ -347,6 +386,18 @@ h1 h2 h3 h4 h5 a {
         grid-gap: 1px;
         padding: 0 2px;
     }
+    .content_grid {
+        min-height: 98vh;
+        display: grid;
+        grid-auto-columns: 20px 60px 1fr 20px;
+        grid-template-rows: 50px 100px auto 50px;
+        grid-template-areas:
+        ". logo nav  ."
+        ". foto foto ."
+        ". content content ."
+        ". footer footer .";
+        grid-gap: 1px;
+    }
     nav {
         font-size: 0.8rem;
         justify-content: left;
@@ -372,6 +423,10 @@ h1 h2 h3 h4 h5 a {
         display: flex;
         flex-direction: column;
         max-width: 100%;
+    }
+    .content_uitleg {
+        grid-area: content;
+        display: block;
     }
     .map {
         grid-area: map;
@@ -434,7 +489,9 @@ h1 h2 h3 h4 h5 a {
     .foto_container > article {
         display: block;
     }
-
+    .center img {
+        max-width: 100%;
+    }
     .foto_item_image  img {
         max-width: 100%;
         height: auto;
@@ -459,6 +516,68 @@ h1 h2 h3 h4 h5 a {
 .grid > * {
     border: 1px solid black;
 }
+/*Tekst opmaak */
+.notes {
+    font-size: 0.7em;
+    color: var(--primary3);
+    font-style: italic;
+}
+.content_grid p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+ol a {
+    text-decoration: none;
+    color: var(--primary0);
+}
+ol a:hover {
+    cursor: pointer;
+}
+.img_left {
+    float: left;
+    margin: 0 5px 5px 0;
+    max-width: 150px;
+    border-radius: 5%;
+}
+.img_right {
+    float: right;
+    margin: 0 0 5px 5px;
+    max-width: 150px;
+    border-radius: 5%;
+}
+/* table lay-out */
+table {
+    border-collapse: collapse; /* voegt de randen samen tot 1 rand */
+    box-shadow: 0 1px 1px hsl(0 0% 0% / 0.25),
+    0 2px 2px hsl(0 0% 0% / 0.20),
+    0 4px 4px hsl(0 0% 0% / 0.15),
+    0 8px 8px hsl(0 0% 0% / 0.10),
+    0 16px 16px hsl(0 0% 0% / 0.05);
+    margin: 2rem 0;
+    padding: 1rem;
+    inline-size: auto;
+}
+caption {
+    padding: 5px 0;
+    color: var(--primary0);
+    font-weight: bold;
+}
+tbody tr:nth-child(even) {
+    background-color: var(--primary3);
+}
+th {
+    background-color: var(--primary0);
+    color: white;
+}
+:is(td, th):not(:empty) {
+    border: 1px solid black;
+    padding: 4px;
+    text-align: center;
+}
+div.responsive-table {
+    inline-size: 100%;
+    overflow-x: auto;
+}
 img {
     height: 100%;
     display: inline-block;
@@ -467,6 +586,11 @@ img {
     padding-top: 2px;
     padding-bottom: 2px;
 }
+ p.center {
+     text-align: center;
+     border-radius: 5%;
+     max-width: 100%;
+ }
 /* Style nav-bar */
 nav {
     grid-area: nav;
@@ -482,7 +606,7 @@ nav ul {
     list-style: none;
 }
 nav > ul > li {
-    position: relative;   /* Belangrijk: referentie voor submenu */
+    position: relative;
     padding: 1px;
     margin: 0;
     list-style-type: none;

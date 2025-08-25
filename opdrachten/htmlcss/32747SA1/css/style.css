@@ -19,11 +19,27 @@ html, body {
     overflow-x: hidden; /* tijdelijk om scroll te voorkomen */
 }
 
-.grid, .contact_grid .content_grid {
+.grid, .contact_grid, .content_grid {
     max-width: 1440px;
     margin: 0 auto;
 }
-
+.logo {
+   grid-area: logo;
+    background-color: var(--primary0);
+    position: relative;
+    display: inline-block;
+}
+.logo::after {
+    content: 'Vogelen';
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    color: white;
+    padding: 2px 2px;
+    font-size: 1rem;
+    font-weight: 800;
+    transform: rotate(-20deg);
+}
 body {
     margin: 0;
     padding: 0;
@@ -105,19 +121,6 @@ h1 h2 h3 h4 h5 a {
         display: flex;
         flex-direction: row;
     }
-
-    .logo::after {
-        content: 'Vogelen';
-        position: absolute;
-        top: 20px;
-        left: 15px;
-        color: white;
-        padding: 2px 6px;
-        font-size: 1rem;
-        font-weight: 800;
-        transform: rotate(-20deg);
-    }
-
     .content {
         grid-area: content;
         display: flex;
@@ -160,7 +163,6 @@ h1 h2 h3 h4 h5 a {
         padding-left: 5px;
         font-size: 1rem;
     }
-
     .block_content {
         width: 50%;
         padding-left: 10px;
@@ -171,7 +173,6 @@ h1 h2 h3 h4 h5 a {
         box-shadow: 2px 2px;
         --box-shadow-color: var(--primary4);
     }
-
     .fotos > *:nth-child(-n+3) {
         display: flex;
         align-items: center;
@@ -180,16 +181,11 @@ h1 h2 h3 h4 h5 a {
         gap: 1rem;
         flex-wrap: nowrap;
     }
-
     .fotos > img {
         width: 33%;
         height: auto;
         align-items: center;
         box-shadow: 2px 2px;
-    }
-
-    .fotos > img hover {
-
     }
 
     /*2 foto's */
@@ -200,11 +196,9 @@ h1 h2 h3 h4 h5 a {
         flex-direction: row;
         justify-content: space-between;
     }
-
     .foto_container > article:nth-child(-n+2) {
         display: block;
     }
-
     .foto_item_image img {
         max-width: 100%;
         height: auto;
@@ -213,7 +207,6 @@ h1 h2 h3 h4 h5 a {
         gap: 1rem;
         align-items: center;
     }
-
     .foto_item_image video {
         display: flex;
         max-width: 100%;
@@ -223,7 +216,6 @@ h1 h2 h3 h4 h5 a {
         gap: 1rem;
         align-items: center;
     }
-
     .foto_item_header {
         padding: 0px 10px;
     }
@@ -283,7 +275,10 @@ h1 h2 h3 h4 h5 a {
         display: flex;
         flex-direction: row;
     }
-
+/*    .logo {
+        position: relative;
+        display: inline-block;
+    }
     .logo::after {
         content: 'Vogelen!';
         position: absolute;
@@ -294,7 +289,7 @@ h1 h2 h3 h4 h5 a {
         font-size: 1rem;
         font-weight: 800;
         transform: rotate(-20deg);
-    }
+    }*/
 
     .content {
         grid-area: content;
@@ -468,7 +463,10 @@ h1 h2 h3 h4 h5 a {
         display: flex;
         flex-direction: column; /* verticaal */
     }
-
+/*    .logo {
+        position: relative;
+        display: inline-block;
+    }
     .logo::after {
         content: 'Vogelen';
         position: absolute;
@@ -479,7 +477,7 @@ h1 h2 h3 h4 h5 a {
         font-size: 0.8rem;
         font-weight: 800;
         transform: rotate(-20deg);
-    }
+    }*/
 
     .content {
         grid-area: content;

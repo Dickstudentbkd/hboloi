@@ -632,6 +632,11 @@ ol a:hover {
     max-inline-size: 150px;
     border-radius: 5%;
 }
+.src_picture img {
+    inline-size: auto;
+    max-inline-size: 98%;
+    block-size: auto;
+}
 
 span {
     font-style: italic;

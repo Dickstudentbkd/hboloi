@@ -5,6 +5,7 @@
     <title>Vogelen en fotografie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <script async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkCW6EbzMoH-onrcG1A1zv9yz49nNO6Z0&callback=console.debug&libraries=maps,marker&v=beta"
             defer
@@ -32,10 +33,10 @@
         </ul>
     </nav>
     <header>
-        <img src="img/banner.JPG">
+        <img src="img/banner.JPG"  alt="Banner website">
     </header>
     <!--Hier  rest van pagina!-->
-    <section class="map">
+    <div class="map">
         <gmp-map
                 center="52.01171171766284, 4.710562139947914"
                 zoom="15"
@@ -46,15 +47,15 @@
                     title="Gouda- stadhuis!"
             ></gmp-advanced-marker>
         </gmp-map>
-    </section>
-    <section class="form">
+    </div>
+    <div class="form">
         <h1>Contactformulier</h1>
         <h2>Heb je een vraag, dan kun je die kwijt via onderstaand formulier.
             Ook tips zijn van harte welkom!</h2>
         <p>Om eventueel een reactie te kunnen geven, hebben we wel enkele persoonsgegevens
             van je nodig.</p>
 
-        <form action="https://jkorpela.fi/cgi-bin/echo.cgi" autocomplete="on">
+        <form id="contactForm" action="https://jkorpela.fi/cgi-bin/echo.cgi" autocomplete="on">
             <p>Selecteer je keuze</p>
             <div class="field_group field_group_radio">
                 <input type="radio" id="vraag" name="choice" value="Vraag">
@@ -86,7 +87,7 @@
             </div>
             <input type="submit" value="Verzenden">
         </form>
-    </section>
+    </div>
 </div>
 </body>
 </html>

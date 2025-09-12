@@ -1,0 +1,10 @@
+p {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: #cccccc;
+    float: left;
+}
+.highlight {
+    background-color: red;
+}

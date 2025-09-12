@@ -641,18 +641,18 @@ ol a:hover {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
     background: var(--primary4);
     text-align: center;
 }
 .minigids img {
-    max-width: 90%;
-    max-height: 80%;
+    max-inline-size: 90%;
+    max-block-size: 80%;
     margin-top: 5%;
-    box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 15px var(--hover);
     border-radius: 5px;
 }
 .minigids:target {

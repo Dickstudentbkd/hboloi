@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oefening 2</title>
+</head>
+<body>
+<div id="text"></div>
+
+<script>
+  alert("Pagina geladen");
+  const name = getName();
+  if (name == null || name == "") {
+    //gebruiker annuleert...
+  } else { // naam is ingevuld
+    if (confirm("Uw naam is " + name + ", is dit correct?")) {
+      document.getElementById("text").innerText =
+              "Welkom " + name + ", een fijne dag gewenst!";
+    } else {
+      //annulering door gebruiker
+      const name = getName();
+    }
+  }
+  function getName() {
+    const name = prompt("Wat is uw naam?");
+    return name;
+  }
+</script>
+</body>
+</html>
+

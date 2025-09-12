@@ -89,30 +89,49 @@
         <input type="text" id="operator" disabled></div>
         <div id="keys">
             <div id="numbers">
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>.</div>
-                <div>0</div>
-                <div>=</div>
+                <div onclick="onClickNumber('7')">7</div>
+                <div onclick="onClickNumber('8')">8</div>
+                <div onclick="onClickNumber('9')">9</div>
+                <div onclick="onClickNumber('4')">4</div>
+                <div onclick="onClickNumber('5')">5</div>
+                <div onclick="onClickNumber('6')">6</div>
+                <div onclick="onClickNumber('1')">1</div>
+                <div onclick="onClickNumber('2')">2</div>
+                <div onclick="onClickNumber('3')">3</div>
+                <div onclick="onClickNumber('.')">.</div>
+                <div onclick="onClickNumber('0')">0</div>
+                <div onclick="onClickEquals()">=</div>
             </div>
             <div id="operators">
-                <div>C</div>
-                <div>+</div>
-                <div>-</div>
-                <div>x</div>
-                <div>/</div>
+                <div onclick="onClickCancel()">C</div>
+                <div onclick="onClickOperator('+')">+</div>
+                <div onclick="onClickOperator('-')">-</div>
+                <div onclick="onClickOperator('x')">x</div>
+                <div onclick="onClickOperator('/')">/</div>
             </div>
         </div>
     </div>
     <script>
-        
+        const myInput = document.getElementById('result');
+        const myOperator = document.getElementById('operator');
+        function onClickNumber(clickedNumber) {
+            console.log(clickedNumber);
+            //document.getElementById('result').value = clickedNumber;
+            myInput.value = clickedNumber;
+        }
+        function onClickOperator(clickedOperator) {
+            console.log(clickedOperator);
+            //document.getElementById('operator').value = clickedOperator;
+            myOperator.value = clickedOperator;
+        }
+        function onClickCancel() {
+            console.log('C');
+            document.getElementById('result').value = "";
+            document.getElementById('operator').value = "";
+        }
+        function onClickEquals() {
+            console.log('=')
+        }
     </script>
 </body>
 

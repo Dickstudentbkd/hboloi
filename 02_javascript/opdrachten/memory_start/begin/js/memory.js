@@ -1,5 +1,13 @@
 "use strict";
+class Card {
+    constructor(card1, card2 = card1, set, sound) {
+        this.card1 = card1;
+        this.card2 = card2;
+        this.set = set;
+        this.sound = sound;
+    }
 
+}
 // maak een const myField en koppel deze aan de div met id="field"
 const myField = document.getElementById("field")
 // Geef myField een event listener die de functie onClickCard aanroept als er op geklikt wordt

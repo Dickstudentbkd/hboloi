@@ -12,3 +12,17 @@ fetch("data/cards.json")
     {
         console.error("Error:", error)
     });
+
+function welcomePlayer() {
+    let player = localStorage.getItem('name');
+    if (player) {
+        alert("Welkom " + player + "!");
+    }
+    else {
+        player = prompt("Geef uw naam: ");
+        if (player != null) {
+            localStorage.setItem('name', player);
+            alert("Welkom " + player + "!");
+        }
+    }
+}

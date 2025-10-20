@@ -1,5 +1,42 @@
 "use strict";
+class Card {
+	constructor(cardObject) {
+		this.card1 = cardObject.card1;
+		this.card2 = cardObject.card2;
+		this.set = cardObject.set;
+		this.sound = cardObject.sound;
+	}
+}
 let myCardArray = [];
+let iClicks = 0; //aantal clicks...
+let iSets = 0; //aantal weggespeelde sets
+
+function welcomePlayer() {
+	// let player = localStorage.getItem('name');
+	let playerInfo = JSON.parse(localStorage.getItem('playerinfo'));
+
+	if (playerInfo.name) {
+		alert("Welkom " + playerInfo.name + "!\n" +
+				 "Highscores: \n" +
+					"\t4x4: " + playerInfo.highscore4 + "\n" +
+					"\t5x5: " + playerInfo.highscore4 + "\n" +
+					"\t6x6: " + playerInfo.highscore4 + "\n");
+	}
+	else {
+		let player = prompt("Geef uw naam: ");
+		playerInfo = {
+			name: player,
+			highscore4: 0,
+			highscore5: 0,
+			highscore6: 0
+		}
+		if (player != null) {
+			localStorage.setItem('playerinfo', JSON.stringify(playerInfo));
+			alert("Welkom " + playerInfo.name + "!");
+
+		}
+	}
+}
 fetch("data/cards.json")
 	.then(response => response.json())
 	.then(data => {
@@ -11,21 +48,14 @@ fetch("data/cards.json")
 		console.error("Error:", error);
 	});
 
-class Card {
-	constructor(cardObject) {
-		this.card1 = cardObject.card1;
-		this.card2 = cardObject.card2;
-		this.set = cardObject.set;
-		this.sound = cardObject.sound;
-	}
-}
+
 
 const myField = document.getElementById("field");
 const mySelect = document.getElementById("selectFieldSize");
 myField.addEventListener("click", onClickCard);
 mySelect.addEventListener("change", onSelectFieldsize);
-// const myCardArray = ["duck", "kitten", "piglet", "puppy", "calf", "veal", "lamb", "rooster", "horse", "mouse", "dog", "cat", "goose", "goat", "sheep", "pig", "cow", "chick", "hen"];
 let boardClass;
+document.addEventListener("DOMContentLoaded", welcomePlayer);
 // let myCardSet;
 
 function shuffle(array) {
@@ -91,9 +121,41 @@ function onClickCard(e) {
 
 	if (e.target.className === "covered") {
 		e.target.className = "uncovered";
-		console.log(e.target.parentNode.firstChild.getAttribute("name"));
+		const fileName = e.target.parentNode.firstChild.getAttribute("name");
+		// playSound(fileName);
+		keepScore(); //controle clicks etc.
+		console.log(fileName);
 	}
-
 
 }
 
+function playSound(fileName) {
+	let sound = new Audio();
+	sound.src = 'snd/' + fileName + '.wav';
+	sound.play();
+}
+function setHighScore() {
+
+}
+
+function keepScore() {
+	iClicks++;
+	if ((iClicks % 2) === 0) {
+		//set timer
+		setTimer(3);
+		//evaluateMatch()
+	}
+}
+/*const myTimeout = setTimeout(myGreeting, 5000);
+
+function myGreeting() {
+  document.getElementById("demo").innerHTML = "Happy Birthday!"
+}*/
+function setTimer(sec) {
+	myField.removeEventListener("click", onClickCard);
+	// Na x seconden weer inschakelen
+	setTimeout(() => {
+		myField.addEventListener("click", onClickCard);
+		console.log("Klikken weer mogelijk!")
+	}, sec*1000);
+}

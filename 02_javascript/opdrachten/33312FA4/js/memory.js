@@ -1,29 +1,24 @@
 "use strict";
-const myCardArray = [];
+let myCardArray = [];
 fetch("data/cards.json")
 	.then(response => response.json())
-	.then(cards => {
-		const list = document.getElementById('card-list');
-		cards.forEach(card => {
-			const li = document.createElement('li');
-			li.textContent = `${card.set} -> ${card.card1}`;
-			list.appendChild(li);
-		});
+	.then(data => {
+		myCardArray = data.map(card => new Card(card));
+		console.log(myCardArray);
 	})
 	.catch(error =>
 	{
-		console.error("Error:", error)
+		console.error("Error:", error);
 	});
 
 class Card {
-	constructor(card1, card2 = card1, set = card1, sound = card1) {
-		this.card1 = card1;
-		this.card2 = card2;
-		this.set = set;
-		this.sound = sound;
+	constructor(cardObject) {
+		this.card1 = cardObject.card1;
+		this.card2 = cardObject.card2;
+		this.set = cardObject.set;
+		this.sound = cardObject.sound;
 	}
 }
-
 
 const myField = document.getElementById("field");
 const mySelect = document.getElementById("selectFieldSize");
@@ -31,7 +26,7 @@ myField.addEventListener("click", onClickCard);
 mySelect.addEventListener("change", onSelectFieldsize);
 // const myCardArray = ["duck", "kitten", "piglet", "puppy", "calf", "veal", "lamb", "rooster", "horse", "mouse", "dog", "cat", "goose", "goat", "sheep", "pig", "cow", "chick", "hen"];
 let boardClass;
-let myCardSet;
+// let myCardSet;
 
 function shuffle(array) {
 	var m = array.length, t, i;
@@ -51,7 +46,6 @@ function shuffle(array) {
 	return array;
 }
 
-
 function onSelectFieldsize(e) {
 	let fieldSize = e.target.value;
 	let myCustomCardArray = shuffle(myCardArray);
@@ -69,15 +63,13 @@ function onSelectFieldsize(e) {
 		myCustomCardArray = myCardArray.slice(0,18);
 		break;
 	}
-	
-	let myDblCardArray = myCustomCardArray;
-	myDblCardArray = myDblCardArray.concat(myCustomCardArray);
-	myDblCardArray = shuffle(myDblCardArray);
-	myCardSet = myDblCardArray.map(card => new Card(card));
-	populateField();
+	let myCardSet = myCustomCardArray;
+	myCardSet = myCardSet.concat(myCustomCardArray);
+	myCardSet = shuffle(myCardSet);
+	populateField(myCardSet);
 }
 
-function populateField() {
+function populateField(myCardSet) {
 	myField.innerHTML = "";
 	myCardSet.forEach(card => {
 		let newTile = document.createElement("div");

@@ -10,7 +10,7 @@ class Card {
 let myCardArray = [];
 let iClicks = 0; //aantal clicks...
 let iSets = 0; //aantal weggespeelde sets
-
+const selectedCards = {first:"", second:""}; //om keuzes te vergelijken...
 function welcomePlayer() {
 	// let player = localStorage.getItem('name');
 	let playerInfo = JSON.parse(localStorage.getItem('playerinfo'));
@@ -121,10 +121,10 @@ function onClickCard(e) {
 
 	if (e.target.className === "covered") {
 		e.target.className = "uncovered";
-		const fileName = e.target.parentNode.firstChild.getAttribute("name");
-		// playSound(fileName);
-		keepScore(); //controle clicks etc.
-		console.log(fileName);
+		const cardName = e.target.parentNode.firstChild.getAttribute("name");
+		// playSound(cardName);
+		keepScore(cardName); //controle clicks etc.
+		console.log(cardName);
 	}
 
 }
@@ -138,19 +138,26 @@ function setHighScore() {
 
 }
 
-function keepScore() {
+function keepScore(card) {
 	iClicks++;
 	if ((iClicks % 2) === 0) {
+		selectedCards.second = card;
 		//set timer
 		setTimer(3);
-		//evaluateMatch()
+		const match = evaluateMatch();
+		if (match) {
+			//removecards
+			setCardsCovered(match);
+			console.log("Kaarten verwijderen\n ")
+		} else {
+			setCardsCovered(match);
+			console.log("Kaarten weer terugdraaien...")
+		}
+	} else {
+		selectedCards.first = card;
 	}
 }
-/*const myTimeout = setTimeout(myGreeting, 5000);
 
-function myGreeting() {
-  document.getElementById("demo").innerHTML = "Happy Birthday!"
-}*/
 function setTimer(sec) {
 	myField.removeEventListener("click", onClickCard);
 	// Na x seconden weer inschakelen
@@ -158,4 +165,28 @@ function setTimer(sec) {
 		myField.addEventListener("click", onClickCard);
 		console.log("Klikken weer mogelijk!")
 	}, sec*1000);
+}
+
+function evaluateMatch() {
+	if (selectedCards.first === selectedCards.second) {
+		return true;
+	} else {
+		return false;
+	}
+}
+function setCardsCovered(match) {
+	const cards = document.querySelectorAll("#field > div");
+	cards.forEach(card => {
+		const cover = card.querySelector("img:last-child");
+		console.log(cover.classList.value);
+		if (cover.classList.contains("uncovered")) {
+			if (match) {
+				cover.classList.remove("uncovered")
+				cover.classList.add("disabledCard");
+			} else {
+				cover.classList.remove("uncovered")
+				cover.classList.add("covered");
+			}
+		}
+	});
 }

@@ -32,7 +32,7 @@ img {
   box-sizing: border-box;
 }
 
-.covered, .uncovered {
+.covered, .uncovered, .disabledCard {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -42,7 +42,9 @@ img {
 .uncovered {
   display: none;
 }
-
+.disabledCard {
+  color: green;
+}
 img {
   margin: 0;
   display: block;

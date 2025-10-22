@@ -5,7 +5,10 @@
   width: 100%;
   margin: 0 auto;
 }
-
+#gameover {
+  color: #3498db;
+  font-size: 25px;
+}
 #field>div {
 padding: 5px;
 position: relative;

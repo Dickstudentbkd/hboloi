@@ -6,7 +6,7 @@
 	<title>Cardgame</title>
 	<link href="css/game.css" rel="stylesheet">
 </head>
-
+<h1 id="gameover"></h1>
 <body>
 	<div><select id="selectFieldSize">
 			<option value="" disabled selected>select field size</option>
@@ -17,10 +17,11 @@
 	</div>
 
 	<div id="player"></div>
+	<div id="gameScores"></div>
 	<div id="field"></div>
 
 	<script src="js/memory.js" type="module"></script>
-
+	<button id="reset">Reset scores</button>
 </body>
 
 </html>

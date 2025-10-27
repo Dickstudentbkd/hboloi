@@ -43,11 +43,13 @@
             <input type="range" min="3" max="6" value="3" id="input-win-condition" oninput="this.nextElementSibling.value = this.value">
             <output>3</output>
         </div>
+
     </div>
     <div id="game">
         <div id="board">
+            <div>Start Player: X</div>
             <div class="row">
-                <div class="cell"></div>
+                <div class="cell" data-value="1"></div>
                 <div class="cell"></div>
                 <div class="cell"></div>
             </div>
@@ -63,7 +65,7 @@
             </div>
         </div>
         <div id="score">
-            <div>
+              <div>
                 <img src="images/playerX.svg">
                 <div id="score-x"></div>
             </div>
@@ -74,8 +76,13 @@
         </div>
         <button id="btn-start">Play again</button>
         <button id="btn-rest">Reset game</button>
+        <div>Start Player: X</div>
     </div>
 </div>
-<script src="./js/game.js" type="module"></script>
+<!--<script src="./js/game.js" type="module"></script>-->
+    <script>
+        const data01 = document.getElementById("score")
+
+    </script>
 </body>
 </html>

@@ -8,14 +8,16 @@ class Board {
         this.columns = columns;
         this.state = [];
         const row = []; // voegt row toe
-         for (let i=0;i<rows;i++) {
-            // const row = []; // voegt row toe
-            for (let j=0;j<columns;j++) {
-                row.push(""); // voegt lege cel toe aan row
+         for (let i=0;i<this.rows;i++) {
+            this.state[i] =[];
+            for (let j=0;j<this.columns;j++) {
+                this.state[i][j] = "-";
             }
-            this.state.push(row); //voegt volledige row toe aan state...
         }
           console.log('ROW 5: ' + this.state[0][2]);
+          console.log("STATE: rows: " + this.state.length);
+          console.log("STATE: columns: " + this.state[2].length);
+          console.log("STATE ARRAY: " + this.state[0]);
     }
     createBoard(boardId) {
         const board = document.getElementById(boardId);
@@ -62,7 +64,10 @@ class Board {
         field.removeEventListener("click", this.onClickField, true);
         //Daarna wegschrijven naar array
         this.setValuePlayer(this.activePlayer, rowValue, cellValue);
-        this.isWinner(this.activePlayer);
+        //is er al een winner?
+        if (this.isWinner(this.activePlayer)) {
+            console.log("ER IS EEN WINNAAR!!!");
+        }
         //wissel player
         this.changePlayer();
         //instellen op board
@@ -104,11 +109,79 @@ class Board {
     isWinner(playerChar) {
         //wincondition
         let winc = inputWinCondition.value;
-        for (let r=0;r<this.state.length;r++) {
+        let rows = this.state.length;
+        let columns = this.state[0].length;
+        let winner = false;
+        //check vertical
+        for (let r=0;r<rows-winc+1;r++) { //rijen, corr wincondition
+            console.log("RIJ: " + r);
             for (let c=0;c<this.state[r].length;c++) {
                 console.log(r + "/" + c + "|" + this.state[r][c])
+                for (let w=0;w<winc;w++ ) { //loop lengte wincondition
+                    if (this.state[r+w][c] === playerChar) {
+                        winner = true;
+                    } else { //false..
+                        winner = false;
+                        break; //exit uit for
+                    }
+                }
+                if (winner) {
+                    console.log("WINNER: " + winner);
+                    console.log("Gewonnen: " + playerChar);
+                    return true;
+                }
+
+             }
+        }
+        //check diagonal boven->beneden
+        let i = 0;
+        for (let r=0;r<rows-winc+1;r++) {
+            for (let c=0;c<winc;c++ ) {
+                i = 0;
+                for (let w=0;w<winc;w++ ) { //loop lengte wincondition
+                    if (this.state[r+i][c+i] === playerChar) {
+                        winner = true;
+                    } else { //false..
+                        winner = false;
+                        break; //exit uit for
+                    }
+                    i++;
+                }
+                if (winner) {
+                    console.log("WINNER: " + winner);
+                    console.log("Gewonnen: " + playerChar);
+                    return true;
+                } else {
+                    console.log("Check diagonaal -boven-> beneden");
+                }
             }
         }
+        //check diagonal beneden->boven
+        console.log("rows:" + rows + " winc: " + winc + " ")
+        for (let r=rows;r>=0;r--) {
+            for (let c=0;c<this.state[r].length;c++ ) {
+                i = 0;
+                for (let w=0;w<winc;w++ ) { //loop lengte wincondition
+                    console.log("I: " + i);
+                    if (this.state[r-i][c+i] === playerChar) {
+                        winner = true;
+                    } else { //false..
+                        winner = false;
+                        break; //exit uit for
+                    }
+                    i++;
+                }
+                if (winner) {
+                    console.log("->WINNER: " + winner);
+                    console.log("->Gewonnen: " + playerChar);
+                    return true;
+                } else {
+                    console.log("Check diagonaal -benden -> boven");
+                }
+            }
+        }
+            console.log("END OF isWinner...");
+        return false;
     }
 }//End class Board...
 
@@ -122,8 +195,8 @@ const inputWinCondition = document.getElementById("input-win-condition")
 inputWidth.addEventListener("change", initializeSliders) ;
 inputHeight.addEventListener("change", initializeSliders);
 inputWinCondition.addEventListener("change", initializeSliders);
-console.log("WIDTH: " + inputWidth.value);
-console.log("HEIGHT: " + inputHeight.value);
+// console.log("WIDTH: " + inputWidth.value);
+// console.log("HEIGHT: " + inputHeight.value);
 //
 //Correctie 'foutjes' in HTML:
 // - path plaatjes
@@ -161,7 +234,7 @@ function initializeSliders() {
     }
     inputWinCondition.max = maxWinV;
     //opnieuw opbouwen gameArea/Board..
-    createBoard(inputWidthV, inputHeightV);
+    createBoard(inputHeightV, inputWidthV);
 
 
 }

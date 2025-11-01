@@ -3,11 +3,13 @@
 document.addEventListener("DOMContentLoaded", resetHTML);
 class Board {
     newCell;
-    constructor(rows = 3, columns = 3) {
+    constructor(rows = 3, columns = 3, wincondition = 3) {
         this.rows = rows;
         this.columns = columns;
+        this.wincondition = wincondition;
         this.state = [];
-        const row = []; // voegt row toe
+        // const row = []; // voegt row toe
+        //array speelveld
          for (let i=0;i<this.rows;i++) {
             this.state[i] =[];
             for (let j=0;j<this.columns;j++) {
@@ -67,13 +69,19 @@ class Board {
         //is er al een winner?
         if (this.isWinner(this.activePlayer)) {
             console.log("ER IS EEN WINNAAR!!!");
-        }
-        //wissel player
-        this.changePlayer();
-        //instellen op board
-        this.setActivePlayer(this.activePlayer);
+            //scores verwerken
+            setPlayerInfoWin(this.activePlayer);
+            //removeEventListener(s)
 
-        //Daarna berekenen of er een win-situatie is
+            //Tekst of rand rond board met winnaar?
+        } else { //gewoon doorgaan...
+            //wissel player
+            this.changePlayer();
+            //instellen op board
+            this.setActivePlayer(this.activePlayer);
+        }
+
+
     }
     startPlayer() {
         const players = ["X","O"];
@@ -115,7 +123,7 @@ class Board {
         //check vertical
         for (let r=0;r<rows-winc+1;r++) { //rijen, corr wincondition
             console.log("RIJ: " + r);
-            for (let c=0;c<this.state[r].length;c++) {
+            for (let c=0;c<columns;c++) {
                 console.log(r + "/" + c + "|" + this.state[r][c])
                 for (let w=0;w<winc;w++ ) { //loop lengte wincondition
                     if (this.state[r+w][c] === playerChar) {
@@ -130,22 +138,38 @@ class Board {
                     console.log("Gewonnen: " + playerChar);
                     return true;
                 }
-
              }
         }
-        //check diagonal boven->beneden
-        let i = 0;
-        for (let r=0;r<rows-winc+1;r++) {
-            for (let c=0;c<winc;c++ ) {
-                i = 0;
+        //horizontaal
+        for (let r=0;r<rows-winc+1;r++) { //rijen doorlopen, corr wincondition
+            console.log("RIJ: " + r);
+            for (let c=0;c<columns;c++) { //kolommen doorlopen
                 for (let w=0;w<winc;w++ ) { //loop lengte wincondition
-                    if (this.state[r+i][c+i] === playerChar) {
+                    if (this.state[r][c+w] === playerChar) {
                         winner = true;
                     } else { //false..
                         winner = false;
                         break; //exit uit for
                     }
-                    i++;
+                }
+                if (winner) {
+                    console.log("WINNER: " + winner);
+                    console.log("Gewonnen: " + playerChar);
+                    return true;
+                }
+            }
+        }
+        //check diagonal boven->beneden
+        let i = 0;
+        for (let r=0;r<rows-winc+1;r++) {
+            for (let c=0;c<winc;c++ ) {
+                for (let w=0;w<winc;w++ ) { //loop lengte wincondition
+                    if (this.state[r+w][c+w] === playerChar) {
+                        winner = true;
+                    } else { //false..
+                        winner = false;
+                        break; //exit uit for
+                    }
                 }
                 if (winner) {
                     console.log("WINNER: " + winner);
@@ -157,26 +181,28 @@ class Board {
             }
         }
         //check diagonal beneden->boven
+        //bij loop door rows: als hoogte< dan winc, ook stoppen
+        //hier: zolang r>=winc; als r<winc dust stoppen.
         console.log("rows:" + rows + " winc: " + winc + " ")
-        for (let r=rows;r>=0;r--) {
-            for (let c=0;c<this.state[r].length;c++ ) {
-                i = 0;
+        for (let r=rows-1;r>=winc-1;r--) { //controle winc..
+            for (let c=0;c<columns-1;c++ ) {
                 for (let w=0;w<winc;w++ ) { //loop lengte wincondition
-                    console.log("I: " + i);
-                    if (this.state[r-i][c+i] === playerChar) {
+                      console.log("r-w: " + r);
+                      console.log("c+w: " + c);
+                      console.log("w: " + w);
+                    if (this.state[r-w][c+w] === playerChar) {
                         winner = true;
                     } else { //false..
                         winner = false;
                         break; //exit uit for
                     }
-                    i++;
                 }
                 if (winner) {
                     console.log("->WINNER: " + winner);
                     console.log("->Gewonnen: " + playerChar);
                     return true;
                 } else {
-                    console.log("Check diagonaal -benden -> boven");
+                    console.log("Check diagonaal -beneden -> boven");
                 }
             }
         }
@@ -184,10 +210,12 @@ class Board {
         return false;
     }
 }//End class Board...
-
+//global constantes
 const scores = document.getElementById("score");
 const scoreX = document.getElementById("score-x");
 const scoreO = document.getElementById("score-o");
+const btnStart = document.getElementById("btn-start");
+const btnReset = document.getElementById("btn-rest");
 // Sliders instellingen
 const inputWidth = document.getElementById("input-width")
 const inputHeight = document.getElementById("input-height")
@@ -195,12 +223,12 @@ const inputWinCondition = document.getElementById("input-win-condition")
 inputWidth.addEventListener("change", initializeSliders) ;
 inputHeight.addEventListener("change", initializeSliders);
 inputWinCondition.addEventListener("change", initializeSliders);
-// console.log("WIDTH: " + inputWidth.value);
-// console.log("HEIGHT: " + inputHeight.value);
+btnStart.addEventListener("click", playAgain);
+btnReset.addEventListener("click", resetGame);
 //
-//Correctie 'foutjes' in HTML:
-// - path plaatjes
-// - score player y
+//Correctie 'oneffenheden' in HTML:
+// - pad plaatjes
+// - score player O
 function resetHTML() {
     scoreX.innerHTML = " ";
     scoreO.innerHTML = " ";
@@ -210,12 +238,13 @@ function resetHTML() {
     playerX.src = './images/playerX.svg';
     playerO.src = './images/playerO.svg';
     inputWinCondition.max = 3;
-    createBoard(3, 3); //default
+    createBoard(3, 3, 3); //default
 }
-function createBoard(rows, columns) {
-    const gameArea = new Board(rows, columns); // aanmaken object vanuit class Board
+function createBoard(rows, columns, wincondition) {
+    const gameArea = new Board(rows, columns, wincondition); // aanmaken object vanuit class Board
     gameArea.createBoard("board");
     let playerStart = gameArea.startPlayer();
+    initPlayerInfo();
     console.log(playerStart);
 }
 //inputWidth, inputHeight, inputWin
@@ -234,7 +263,60 @@ function initializeSliders() {
     }
     inputWinCondition.max = maxWinV;
     //opnieuw opbouwen gameArea/Board..
-    createBoard(inputHeightV, inputWidthV);
+    createBoard(inputHeightV, inputWidthV, inputWinV);
+}
+//Start game opnieuw...
+function playAgain() {
+    createBoard(inputWidth.value, inputHeight.value, inputWinCondition.value);
+}
+//localStorage bijhouden: key=playerinfo; var=playerInfo;
+function initPlayerInfo() {
+    let playerInfo = JSON.parse(localStorage.getItem('playerinfo'));
+    if (!playerInfo) {
+        playerInfo = {
+            x: 0,
+            o: 0
+        }
+        localStorage.setItem('playerinfo', JSON.stringify(playerInfo));
+    }
+    document.getElementById("score-x").innerHTML = playerInfo.x;
+    document.getElementById("score-o").innerHTML = playerInfo.o;
+}
+function setPlayerInfoWin(player) {
+    let playerInfo = JSON.parse(localStorage.getItem('playerinfo'));
+    if (!playerInfo) {
+        initPlayerInfo;
+    }
+    playerInfo = JSON.parse(localStorage.getItem('playerinfo'));
+    let scoreX = playerInfo.x;
+    let scoreO = playerInfo.o;
+    if (player.toLowerCase()==="x") {
+        scoreX++;
+    } else if (player.toLowerCase()==="o") {
+        scoreO++;
+    }
+    //terugschrijven...
+    playerInfo = {
+        x: scoreX,
+        o: scoreO
+    }
+    localStorage.setItem('playerinfo', JSON.stringify(playerInfo));
+    document.getElementById("score-x").innerHTML = playerInfo.x;
+    document.getElementById("score-o").innerHTML = playerInfo.o;
+}
+function resetGame() {
+    //localstorage legen
+    localStorage.clear();
+    // let playerInfo = JSON.parse(localStorage.getItem('playerinfo'));
+    let playerInfo = {
+            x: 0,
+            o: 0
+        }
 
+        localStorage.setItem('playerinfo', JSON.stringify(playerInfo));
 
+    document.getElementById("score-x").innerHTML = playerInfo.x;
+    document.getElementById("score-o").innerHTML = playerInfo.o;
+    //speelveld opnieuw opbouwen (default)
+    createBoard();
 }

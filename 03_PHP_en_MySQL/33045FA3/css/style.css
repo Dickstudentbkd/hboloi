@@ -1,0 +1,12 @@
+body {
+    font-family: 'monospace';
+ }
+
+table {
+    /*width: 100%;*/
+}
+table, th, td {
+    border: 1px solid;
+    border-color: lightskyblue;
+    text-align: center;
+}

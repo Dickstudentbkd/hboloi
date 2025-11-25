@@ -5,7 +5,6 @@ class Konijn {
     public $emoties;
     public $emotieText;
     public $voeten = '("")("")';
-    public $score = 0;
 
     public function __construct() {
         $this->emoties = array(
@@ -17,13 +16,14 @@ class Konijn {
             "nadenkend" => "(&.&)",
         );
     }
-
+    /*Genereert een random emotie op basis van de array $this->emoties uit de constructor*/
     private function genereerEmotie() {
         //emoties altijd bekend door constructor
         $willekeurigeEmotie = array_rand($this->emoties);
         $this->emotieText = $willekeurigeEmotie;
         return $this->emoties[$willekeurigeEmotie];
     }
+    /*print het volledige konijn op basis van emotietekst*/
     public function printKonijn($emotie) {
         $konijn = $this->oren . "<br>";
         $this->emotie = $emotie;
@@ -35,6 +35,7 @@ class Konijn {
         $emotie = $this->genereerEmotie();
         return array($this->emotieText, $emotie);
     }
+    /*Werkt score bij op basis van de emotietekst...*/
     public function setScore($emotietekst) {
         $file = "score/" . $emotietekst . ".txt";
         $score = 0; //integer
@@ -56,9 +57,9 @@ class Konijn {
         }
 
     }
+    /*controleert of bestand met 'emotie'.txt bestaat, zo niet, maakt aan en zet waarde op 0*/
     public function checkTxtFiles() {
-        //controleert of bestand met 'emotie'.txt bestaat, zo niet, maakt aan en zet waarde op 0
-        foreach ($this->emoties as $emotietekst=>$emotie) {
+        foreach ($this->emoties as $emotietekst => $emotie) {
             $file = "score/" . $emotietekst . ".txt";
             if (!file_exists($file)) { //bestand bestaat niet in map: aanmaken
                 $newFile = fopen($file, "w");
@@ -67,6 +68,8 @@ class Konijn {
             }
         }
     }
+    /*alle emoties worden doorlopen; op basis van emotie wordt de waarde
+    uit het bestand gehaald (getScore()); levert dus een associatieve array terug*/
     public function getScores() {
         $scores = array();
         $score = 0;
@@ -76,6 +79,7 @@ class Konijn {
         }
         return $scores;
     }
+    //wordt intern gebruikt: haalt score op uit bestand op basis van emotietekst.
     private function getScore($tekst) {
         $file = "score/" . $tekst . ".txt";
         if (file_exists($file)) { //bestaat
@@ -87,8 +91,5 @@ class Konijn {
             $score = 0;
         }
         return $score;
-
     }
-
-
 }

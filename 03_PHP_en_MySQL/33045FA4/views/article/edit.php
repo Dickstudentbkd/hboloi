@@ -2,7 +2,7 @@
 
 <a href="/../article">Artikelen</a>
 <?php
-echo '<h1>Bewerken artikel!</h1>';
+echo '<h1>Bewerken artikel</h1>';
 
 ?>
 <form action="/article/update/<?php echo $article->id; ?>" method="POST">

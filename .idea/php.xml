@@ -28,7 +28,6 @@
       <path value="$PROJECT_DIR$/vendor/psr/container" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="f6853540-0590-4c3e-8c80-aa6a567ef7a1" timeout="60000" />

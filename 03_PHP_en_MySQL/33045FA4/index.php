@@ -15,6 +15,7 @@ $urlSegments = explode('/', trim($url, '/'));
 $action = !empty($urlSegments[0]) ? $urlSegments[0] : 'home';
 $method = !empty($urlSegments[1]) ? $urlSegments[1] : 'index';
 $id = !empty($urlSegments[2]) ? $urlSegments[2] : null;
+//echo $url . $br;
 // Controleer welke controller en methode moet worden uitgevoerd
 switch ($action) {
     case 'home':
@@ -35,5 +36,5 @@ switch ($action) {
         echo 'Pagina niet gevonden!' . $br;
         break;
 }
-
+include 'views/layout/footer.php';
 ?>

@@ -1,0 +1,175 @@
+@charset "UTF-8";
+:root {
+
+    --primary0: rgba(183, 92,  0, 1); /* Dark */
+    --primary1: rgba(254,128,  0,1);
+    --primary2: rgba(255,172, 88,1);
+    --primary3: rgba(255,245,235,1);
+    --primary4: rgba(255,255,255,1); /* Light */
+    --hover: rgba(255,245,235,1);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 10px;
+}
+div {
+    display: flex;
+    /*float: left;*/
+    height: 300px;
+}
+h2 {
+    display: flex;
+}
+
+/*login-scherm*/
+#login {
+    display: flex;
+    height: 300px;
+
+}
+#login > * {
+    margin: auto;
+    background-color: var(--primary4);
+    border:red solid 2px;
+    border-radius: 5px;
+    padding: 20px;
+}
+.frmlogin {
+    width: 500px;
+}
+.frmlogin label {
+    padding: 12px 5px 2px 0;
+    display: flex;
+    float: left;
+    width: 20%;
+    margin-top: 6px;
+}
+.frmlogin input {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+input[type=text], input[type=password]  {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=submit] {
+    background-color: var(--primary0);
+    color: white;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: none;
+    position: relative;
+}
+input[type=submit]:hover {
+    background-color: var(--primary2);
+    color: var(--primary4);
+}
+/*nav */
+nav {
+    background-color: var(--primary0);
+    color: #fff;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    grid-area: nav;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav ul li {
+    /* This allow us to arrange list items in a row, without using float */
+    margin: 0;
+    display: inline-block;
+    list-style-type: none;
+    transition: all 0.2s;
+    border-right: 1px solid var(--primary3);
+}
+
+/* Create a style for the first level items */
+nav > ul > li > a {
+    display: block;
+    line-height: 3em;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+    color: white;
+}
+nav > ul > li > a:hover {
+    color: var(--primary0);
+}
+nav li > ul {
+    display: none;
+    margin-top: 1px;
+    background-color: var(--primary2);
+}
+nav li > ul li {
+    display: block;
+}
+nav li > ul li a {
+    color: blue;
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 2em;
+    text-decoration: none;
+}
+nav li > ul li a:hover {
+    color: var(--primary0);
+}
+/* Change the background color when mouse over items */
+nav li:hover {
+    background-color: var(--primary4);
+    color: var(--primary0);
+}
+/* display the submenu on mouse over main menu item*/
+nav li:hover > ul{
+    position:absolute;
+    display : block;
+    color: var(--primary0);
+}
+/*Idem als login form, maar nu voor detail-forms...*/
+#frmDetail > * {
+    margin: auto;
+    background-color: var(--primary4);
+    border:lightgray inset 2px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#frmDetail {
+    display: flex;
+    height: 300px;
+}
+.frmDetail {
+    width: 600px;
+}
+.frmDetail label {
+    padding: 12px 5px 2px 0;
+    display: flex;
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+.frmDetail input {
+    float: left;
+    width: 70%;
+    margin-top: 6px;
+}
+.submitbtn {
+    width: 100%;
+    /*height: 300px;*/
+    /*border: 5px solid red;*/
+    display: flex;
+    justify-content: center;
+}

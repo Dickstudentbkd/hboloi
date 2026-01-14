@@ -1,4 +1,4 @@
-#LOI Full-stack developer
+# LOI Full-stack developer
 
 Deze studie bestaat uit een aantal modules. Hieronder een beknopt overzicht.
 
@@ -21,3 +21,8 @@ was de keuze: MVC m.b.v. PHP of het gebruik van Laravel. Laravel is
 niet aan bod geweest. Een eenvoudige handleiding voor installatie, maar dat 
 was het dan ook wel. 
 Toch gekozen om de eindopdracht m.b.v. Laravel te maken en het resultaat mocht er zijn!.
+
+## VUE.JS
+
+Bezig met deze module (BkD 14-01-2026). Interessante module omdat ik hier nog niets
+mee gedaan heb. Van de vorige modules had ik zeker wel de basis al gehad, maar van VUE niets.   
